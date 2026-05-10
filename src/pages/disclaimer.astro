@@ -5,7 +5,7 @@ import { site } from '@data/site';
 const title = 'Disclaimer | Sonia Gupta & Associates';
 const description = 'Read the website disclaimer for Sonia Gupta & Associates regarding general information, professional advice, government approvals, pricing, timelines and liability.';
 const pages = await Astro.glob('../content/pages/disclaimer.md');
-const { Content } = await pages[0].render();
+const { Content } = pages[0];
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',

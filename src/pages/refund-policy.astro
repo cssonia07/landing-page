@@ -5,7 +5,7 @@ import { site } from '@data/site';
 const title = 'Refund Policy | Sonia Gupta & Associates';
 const description = 'Read the Refund Policy for professional services provided by Sonia Gupta & Associates, including cancellation, non-refundable fees, government charges and refund request process.';
 const pages = await Astro.glob('../content/pages/refund-policy.md');
-const { Content } = await pages[0].render();
+const { Content } = pages[0];
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',

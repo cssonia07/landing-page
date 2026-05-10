@@ -5,7 +5,7 @@ import { site } from '@data/site';
 const title = 'Privacy Policy | Sonia Gupta & Associates';
 const description = 'Read the Privacy Policy of Sonia Gupta & Associates explaining how client, business, tax, compliance and website information is collected, used, stored and protected.';
 const pages = await Astro.glob('../content/pages/privacy-policy.md');
-const { Content } = await pages[0].render();
+const { Content } = pages[0];
 const schema = [
   {
     '@context': 'https://schema.org',

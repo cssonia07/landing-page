@@ -11,15 +11,56 @@ import CTASection from '@components/CTASection.astro';
 import DisclaimerBox from '@components/DisclaimerBox.astro';
 import { site } from '@data/site';
 
-export async function getStaticPaths() {
-  const pages = await Astro.glob('../content/services/*.md');
-  return pages.map((page) => ({
+type ServiceFaq = {
+  question: string;
+  answer: string;
+};
+
+type RelatedService = {
+  label: string;
+  href: string;
+};
+
+type ServicePage = {
+  frontmatter: {
+    slug: string;
+    title: string;
+    metaTitle: string;
+    metaDescription: string;
+    category: string;
+    heroHeading: string;
+    heroSubheading: string;
+    ctaButtons: string[];
+    overview: string[];
+    whoNeedsHeading?: string;
+    whoNeeds: string[];
+    whatWeDo: string[];
+    documents: string[];
+    process: string[];
+    pricing: string[];
+    pricingNote: string;
+    importantContent?: string;
+    faqs: ServiceFaq[];
+    relatedServices?: RelatedService[];
+    ctaHeading?: string;
+    ctaText?: string;
+  };
+};
+
+type ServiceStaticPath = {
+  params: { slug: string };
+  props: { page: ServicePage };
+};
+
+export async function getStaticPaths(): Promise<ServiceStaticPath[]> {
+  const pages = (await Astro.glob('../content/services/*.md')) as ServicePage[];
+  return pages.map((page: ServicePage) => ({
     params: { slug: page.frontmatter.slug },
     props: { page }
   }));
 }
 
-const { page } = Astro.props;
+const { page } = Astro.props as { page: ServicePage };
 const service = page.frontmatter;
 const canonical = `/${service.slug}`;
 const breadcrumbItems = [
@@ -40,7 +81,7 @@ const breadcrumbSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: service.faqs.map((faq) => ({
+  mainEntity: service.faqs.map((faq: ServiceFaq) => ({
     '@type': 'Question',
     name: faq.question,
     acceptedAnswer: {
@@ -108,7 +149,7 @@ const professionalServiceSchema = {
         <section class="rounded border border-slate-200 bg-white p-6 shadow-sm">
           <h2 class="text-2xl font-bold tracking-normal text-navy-900">Related Services</h2>
           <div class="mt-5 flex flex-wrap gap-3">
-            {service.relatedServices.map((item) => (
+            {service.relatedServices.map((item: RelatedService) => (
               <a href={item.href} class="rounded border border-slate-300 px-4 py-2 text-sm font-bold text-navy-900 hover:bg-slate-50">
                 {item.label}
               </a>

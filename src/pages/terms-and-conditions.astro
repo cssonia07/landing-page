@@ -5,7 +5,7 @@ import { site } from '@data/site';
 const title = 'Terms & Conditions | Sonia Gupta & Associates';
 const description = 'Read the Terms & Conditions governing use of the Sonia Gupta & Associates website, inquiry forms, consultation process and professional services.';
 const pages = await Astro.glob('../content/pages/terms-and-conditions.md');
-const { Content } = await pages[0].render();
+const { Content } = pages[0];
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
