@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  body?: string[];
+  items?: string[];
+}
+
+const { title, body = [], items = [] } = Astro.props;
+---
+
+<section class="rounded border border-slate-200 bg-white p-6 shadow-sm">
+  <h2 class="text-2xl font-bold tracking-normal text-navy-900">{title}</h2>
+  {body.length > 0 && (
+    <div class="mt-4 space-y-4 text-sm leading-7 text-slate-600">
+      {body.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  )}
+  {items.length > 0 && (
+    <ul class="mt-5 grid gap-3 text-sm leading-6 text-slate-700 sm:grid-cols-2">
+      {items.map((item) => <li class="rounded border border-slate-200 bg-slate-50 p-3 font-semibold">{item}</li>)}
+    </ul>
+  )}
+</section>

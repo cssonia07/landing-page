@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f7fa"/>
+  <rect x="80" y="80" width="1040" height="470" rx="8" fill="#ffffff" stroke="#d7dee8"/>
+  <rect x="80" y="80" width="1040" height="86" rx="8" fill="#0d263d"/>
+  <text x="130" y="135" fill="#ffffff" font-family="Arial, sans-serif" font-size="34" font-weight="700">Sonia Gupta &amp; Associates</text>
+  <text x="130" y="260" fill="#0d263d" font-family="Arial, sans-serif" font-size="52" font-weight="700">GST, Company Registration</text>
+  <text x="130" y="325" fill="#0d263d" font-family="Arial, sans-serif" font-size="52" font-weight="700">&amp; Compliance Services</text>
+  <text x="130" y="395" fill="#455464" font-family="Arial, sans-serif" font-size="28">Professional business legal and compliance support across India.</text>
+  <rect x="130" y="450" width="250" height="54" rx="6" fill="#b9852d"/>
+  <text x="162" y="486" fill="#0d263d" font-family="Arial, sans-serif" font-size="22" font-weight="700">Book Consultation</text>
+</svg>

@@ -1,0 +1,124 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import ServiceHero from '@components/ServiceHero.astro';
+import ServiceSection from '@components/ServiceSection.astro';
+import DocumentsList from '@components/DocumentsList.astro';
+import ProcessSteps from '@components/ProcessSteps.astro';
+import PricingBox from '@components/PricingBox.astro';
+import FAQAccordion from '@components/FAQAccordion.astro';
+import CTASection from '@components/CTASection.astro';
+import DisclaimerBox from '@components/DisclaimerBox.astro';
+import { site } from '@data/site';
+
+export async function getStaticPaths() {
+  const pages = await Astro.glob('../content/services/*.md');
+  return pages.map((page) => ({
+    params: { slug: page.frontmatter.slug },
+    props: { page }
+  }));
+}
+
+const { page } = Astro.props;
+const service = page.frontmatter;
+const canonical = `/${service.slug}`;
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: service.title, href: canonical }
+];
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.label,
+    item: `${site.url}${item.href === '/' ? '' : item.href}`
+  }))
+};
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: service.faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer
+    }
+  }))
+};
+const professionalServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: `${site.name} - ${service.title}`,
+  url: `${site.url}/${service.slug}`,
+  telephone: `+91${site.phone}`,
+  email: site.serviceEmail,
+  areaServed: 'India',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Noida',
+    addressRegion: 'UP',
+    postalCode: '201307',
+    addressCountry: 'IN'
+  },
+  serviceType: service.title,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: site.name
+  }
+};
+---
+
+<BaseLayout title={service.metaTitle} description={service.metaDescription} schema={[breadcrumbSchema, faqSchema, professionalServiceSchema]}>
+  <div class="border-b border-slate-200 bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={breadcrumbItems} />
+    </div>
+  </div>
+
+  <ServiceHero
+    eyebrow={service.category}
+    title={service.heroHeading}
+    description={service.heroSubheading}
+    primaryLabel={service.ctaButtons[0]}
+    secondaryLabel={service.ctaButtons[1]}
+  />
+
+  <section class="bg-white py-14">
+    <div class="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:px-8">
+      <ServiceSection title="Overview" body={service.overview} />
+      <ServiceSection title={service.whoNeedsHeading || 'Who Needs This Service'} items={service.whoNeeds} />
+      <ServiceSection title="What We Do" items={service.whatWeDo} />
+      <DocumentsList documents={service.documents} />
+      <ProcessSteps steps={service.process} />
+      <PricingBox pricing={service.pricing} note={service.pricingNote} />
+      {service.importantContent && (
+        <ServiceSection title="Important Content" body={[service.importantContent]} />
+      )}
+      <section class="rounded border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-bold tracking-normal text-navy-900">FAQs</h2>
+        <div class="mt-5">
+          <FAQAccordion items={service.faqs} />
+        </div>
+      </section>
+      {service.relatedServices && service.relatedServices.length > 0 && (
+        <section class="rounded border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-2xl font-bold tracking-normal text-navy-900">Related Services</h2>
+          <div class="mt-5 flex flex-wrap gap-3">
+            {service.relatedServices.map((item) => (
+              <a href={item.href} class="rounded border border-slate-300 px-4 py-2 text-sm font-bold text-navy-900 hover:bg-slate-50">
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+      <DisclaimerBox />
+    </div>
+  </section>
+
+  <CTASection title={service.ctaHeading || 'Need Professional Help?'} description={service.ctaText || 'Tell us your requirement and we will guide you with the right process, documents, pricing, and timeline.'} />
+</BaseLayout>

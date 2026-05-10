@@ -1,0 +1,38 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { site } from '@data/site';
+
+const title = 'Privacy Policy | Sonia Gupta & Associates';
+const description = 'Read the Privacy Policy of Sonia Gupta & Associates explaining how client, business, tax, compliance and website information is collected, used, stored and protected.';
+const pages = await Astro.glob('../content/pages/privacy-policy.md');
+const { Content } = await pages[0].render();
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: `${site.url}/privacy-policy` }
+    ]
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: site.name,
+    url: site.url,
+    email: site.email,
+    telephone: `+91${site.phone}`,
+    areaServed: 'India'
+  }
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <section class="bg-mist py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="prose-service rounded border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <Content />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

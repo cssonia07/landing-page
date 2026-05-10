@@ -1,0 +1,148 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import SectionHeading from '@components/SectionHeading.astro';
+import CTASection from '@components/CTASection.astro';
+import { site } from '@data/site';
+import faqRaw from '../content/pages/faq.md?raw';
+
+type FAQItem = {
+  question: string;
+  answer: string;
+};
+
+type FAQGroup = {
+  title: string;
+  items: FAQItem[];
+};
+
+const title = 'FAQs | Business Registration, GST, Tax & Compliance Services';
+const description =
+  'Find answers to common questions about GST registration, company registration, income tax filing, FSSAI, Startup India, MSME, GeM, IEC, ROC filing, FEMA and refund policy.';
+
+const pushQuestion = (group: FAQGroup, current: FAQItem | null) => {
+  if (current && current.question && current.answer.trim()) {
+    group.items.push({ question: current.question, answer: current.answer.trim() });
+  }
+};
+
+const groups: FAQGroup[] = [];
+let activeGroup: FAQGroup = { title: 'General Questions', items: [] };
+let currentQuestion: FAQItem | null = null;
+
+for (const rawLine of faqRaw.split(/\r?\n/)) {
+  const line = rawLine.trim();
+  if (!line || line === '---' || line === '## Frequently Asked Questions') {
+    continue;
+  }
+
+  const generalMatch = line.match(/^###\s+(.+)/);
+  const categoryMatch = line.match(/^##\s+(.+FAQs)$/);
+  const questionMatch = line.match(/^##\s+\d+\.\s+(.+)/);
+
+  if (generalMatch) {
+    pushQuestion(activeGroup, currentQuestion);
+    currentQuestion = null;
+    if (activeGroup.items.length) groups.push(activeGroup);
+    activeGroup = { title: generalMatch[1], items: [] };
+    continue;
+  }
+
+  if (categoryMatch) {
+    pushQuestion(activeGroup, currentQuestion);
+    currentQuestion = null;
+    if (activeGroup.items.length) groups.push(activeGroup);
+    activeGroup = { title: categoryMatch[1], items: [] };
+    continue;
+  }
+
+  if (questionMatch) {
+    pushQuestion(activeGroup, currentQuestion);
+    currentQuestion = { question: questionMatch[1], answer: '' };
+    continue;
+  }
+
+  if (currentQuestion) {
+    currentQuestion.answer += `${currentQuestion.answer ? '\n' : ''}${line}`;
+  }
+}
+
+pushQuestion(activeGroup, currentQuestion);
+if (activeGroup.items.length) groups.push(activeGroup);
+
+const allFaqs = groups.flatMap((group) => group.items);
+const escapeHtml = (value: string) =>
+  value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+const renderAnswer = (value: string) =>
+  escapeHtml(value)
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br />');
+const plainAnswer = (value: string) => value.replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'FAQ', item: `${site.url}/faq` }
+    ]
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: allFaqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: plainAnswer(faq.answer)
+      }
+    }))
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: site.name,
+    url: site.url,
+    telephone: `+91${site.phone}`,
+    email: site.email,
+    areaServed: 'India'
+  }
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <section class="bg-mist py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        eyebrow="FAQ"
+        title="Frequently Asked Questions"
+        description="Find answers to common questions about GST registration, company registration, income tax filing, FSSAI, Startup India, MSME, GeM, IEC, ROC filing, FEMA and refund policy."
+      />
+    </div>
+  </section>
+
+  <section class="bg-white py-16">
+    <div class="mx-auto grid max-w-5xl gap-10 px-4 sm:px-6 lg:px-8">
+      {groups.map((group) => (
+        <section class="rounded border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-2xl font-bold text-navy-900">{group.title}</h2>
+          <div class="mt-5 grid gap-3">
+            {group.items.map((faq) => (
+              <details class="rounded border border-slate-200 bg-slate-50 p-5">
+                <summary class="cursor-pointer list-none text-base font-bold leading-6 text-navy-900">{faq.question}</summary>
+                <p class="mt-3 text-sm leading-7 text-slate-600" set:html={renderAnswer(faq.answer)} />
+              </details>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+
+  <CTASection title="Need Professional Help?" description="Tell us your requirement and we will guide you with the right process, documents, pricing, and timeline." />
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { site } from '@data/site';
+
+const title = 'Terms & Conditions | Sonia Gupta & Associates';
+const description = 'Read the Terms & Conditions governing use of the Sonia Gupta & Associates website, inquiry forms, consultation process and professional services.';
+const pages = await Astro.glob('../content/pages/terms-and-conditions.md');
+const { Content } = await pages[0].render();
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+    { '@type': 'ListItem', position: 2, name: 'Terms & Conditions', item: `${site.url}/terms-and-conditions` }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <section class="bg-mist py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="prose-service rounded border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <Content />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

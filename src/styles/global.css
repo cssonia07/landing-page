@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --focus-ring: 0 0 0 3px rgba(185, 133, 45, 0.28);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #ffffff;
+  color: #1d2733;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  outline-color: #b9852d;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  box-shadow: var(--focus-ring);
+  outline: none;
+}
+
+.prose-service h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #0d263d;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.prose-service h1 {
+  margin-bottom: 1rem;
+  color: #0d263d;
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.prose-service h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #123554;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.prose-service p {
+  margin: 0.85rem 0;
+  color: #455464;
+  line-height: 1.8;
+}
+
+.prose-service ul,
+.prose-service ol {
+  margin: 0.85rem 0 1rem;
+  padding-left: 1.25rem;
+  color: #455464;
+  line-height: 1.8;
+}
+
+.prose-service li {
+  padding-left: 0.2rem;
+}
+
+.prose-service hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.prose-service strong {
+  color: #123554;
+  font-weight: 700;
+}

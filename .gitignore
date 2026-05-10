@@ -1,0 +1,7 @@
+node_modules/
+_node_modules_onedrivebak_root/
+dist/
+.astro/
+.netlify/
+.env
+npm-debug.log*
