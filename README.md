@@ -79,5 +79,3 @@ PUBLIC_CLARITY_ID=xxxxxxxxxx
 ## Netlify
 
 The project includes `netlify.toml`. The contact form uses Netlify Forms with the form name `contact`.
-
-this change is fot example
