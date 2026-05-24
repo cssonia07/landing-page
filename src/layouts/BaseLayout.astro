@@ -22,7 +22,7 @@ const clarityId = import.meta.env.PUBLIC_CLARITY_ID;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0d263d" />
+    <meta name="theme-color" content="#0F172A" />
     <SEO title={title} description={description} schema={schema} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://www.googletagmanager.com" />
@@ -61,7 +61,9 @@ const clarityId = import.meta.env.PUBLIC_CLARITY_ID;
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': ['LocalBusiness', 'ProfessionalService'],
-      name: site.name,
+      name: site.firmName,
+      alternateName: site.name,
+      brand: site.name,
       url: site.url,
       telephone: `+91${site.phone}`,
       email: site.email,
@@ -74,7 +76,7 @@ const clarityId = import.meta.env.PUBLIC_CLARITY_ID;
       },
       areaServed: 'India',
       foundingDate: site.established,
-      description: site.tagline,
+      description: `${site.name} is operated by ${site.firmName}, a Practicing Company Secretary firm providing business registration, tax filing, compliance, and related professional services in India.`,
       sameAs: [site.whatsappUrl]
     })} />
   </body>

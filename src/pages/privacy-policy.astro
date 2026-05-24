@@ -2,8 +2,8 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { site } from '@data/site';
 
-const title = 'Privacy Policy | Sonia Gupta & Associates';
-const description = 'Read the Privacy Policy of Sonia Gupta & Associates explaining how client, business, tax, compliance and website information is collected, used, stored and protected.';
+const title = 'Privacy Policy | NiyamDesk';
+const description = 'Read the Privacy Policy for niyamdesk.in, operated under the trade name NiyamDesk by Sonia Gupta & Associates, explaining how client, business, tax, compliance and website information is handled.';
 const pages = await Astro.glob('../content/pages/privacy-policy.md');
 const { Content } = pages[0];
 const schema = [
@@ -18,7 +18,9 @@ const schema = [
   {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: site.name,
+    name: site.firmName,
+    alternateName: site.name,
+    brand: site.name,
     url: site.url,
     email: site.email,
     telephone: `+91${site.phone}`,
@@ -28,9 +30,9 @@ const schema = [
 ---
 
 <BaseLayout title={title} description={description} schema={schema}>
-  <section class="bg-mist py-16">
+  <section class="bg-white py-16 lg:py-20">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-      <div class="prose-service rounded border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div class="prose-service rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
         <Content />
       </div>
     </div>

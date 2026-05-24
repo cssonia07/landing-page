@@ -1,8 +1,8 @@
-﻿## Contact Us
+## Contact Us
 
 ### Need Help With Business Registration, Tax Filing or Compliance?
 
-If you are starting a business, managing GST, filing income tax, completing ROC compliance, applying for FSSAI, Startup India, GeM, IEC or handling any other business compliance requirement, you can contact us for professional support.
+If you are starting a business, managing GST, filing income tax, completing ROC compliance, applying for FSSAI, Startup India, MSME/Udyam, GeM, IEC, trademark registration or FEMA compliance, you can contact us for professional support.
 
 Share your requirement and we will guide you with the process, documents, timeline and pricing.
 
@@ -10,13 +10,16 @@ Share your requirement and we will guide you with the process, documents, timeli
 
 ## Contact Details
 
-**Firm Name:** Sonia Gupta & Associates  
+**Brand Name:** NiyamDesk  
+**Operated By:** Sonia Gupta & Associates  
+**Website:** niyamdesk.in  
 **Phone:** 8527285843  
 **WhatsApp:** 8527285843  
-**Email:** sonialegal2701@gmail.com  
-**Office Address:** [Add full office address]  
-**Working Days:** [Add working days]  
-**Working Hours:** [Add working hours]
+**Email:** contact@niyamdesk.in  
+**Location:** Noida, UP 201307  
+**Service Area:** Online support across India  
+**Working Days:** Monday to Saturday  
+**Working Hours:** 10:00 AM to 6:00 PM
 
 ---
 
@@ -97,15 +100,13 @@ After confirmation and payment, we begin the work and keep you updated.
 
 ---
 
-## Location Section
+## Service Area
 
-**Office Location:** [Add full address]
+NiyamDesk supports clients online across India, so you can start with a call, email or WhatsApp message. The office location is Noida, UP 201307.
 
-You may add a Google Map embed here once the office address is finalized.
-
-Suggested Map Button Text:
-- Get Directions
-- View on Google Maps
+CTA Buttons:
+- Book Consultation
+- Talk on WhatsApp
 
 ---
 

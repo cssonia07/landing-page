@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://soniaguptaassociates.com/sitemap-index.xml

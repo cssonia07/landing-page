@@ -84,6 +84,7 @@ export const serviceCategories = [
       'We also help with trademark protection, accounting support, PF/ESI, professional tax, and related business compliance work.',
     services: [
       'Trademark Registration',
+      'FEMA Compliance',
       'PF/ESI Registration',
       'Professional Tax Registration',
       'Accounting & Bookkeeping Support',
@@ -99,7 +100,7 @@ export const featuredServices: Service[] = [
     category: 'GST Services',
     description:
       'Get GST registration support with document review, application preparation, and practical guidance for your business.',
-    price: 'Starting from ₹999*',
+    price: 'Starting from Rs. 999*',
     featured: true
   },
   {
@@ -108,7 +109,16 @@ export const featuredServices: Service[] = [
     category: 'GST Services',
     description:
       'Monthly or periodic GST filing support to help your business stay current with return requirements.',
-    price: 'Starting from ₹499/month*',
+    price: 'Starting from Rs. 499/month*',
+    featured: true
+  },
+  {
+    title: 'GST Notice Support',
+    slug: 'gst-notice-support',
+    category: 'GST Services',
+    description:
+      'Professional help for reviewing GST notices, understanding the issue, preparing responses, and managing follow-up.',
+    price: 'Starting from Rs. 1,999*',
     featured: true
   },
   {
@@ -117,7 +127,7 @@ export const featuredServices: Service[] = [
     category: 'Company Registration',
     description:
       'End-to-end incorporation support for founders choosing a private limited company structure.',
-    price: 'Starting from ₹6,999*',
+    price: 'Starting from Rs. 6,999*',
     featured: true
   },
   {
@@ -126,7 +136,7 @@ export const featuredServices: Service[] = [
     category: 'Company Registration',
     description:
       'Registration support for Limited Liability Partnerships with guidance on partners, documents, and filings.',
-    price: 'Starting from ₹4,999*',
+    price: 'Starting from Rs. 4,999*',
     featured: true
   },
   {
@@ -135,7 +145,7 @@ export const featuredServices: Service[] = [
     category: 'Income Tax Services',
     description:
       'Accurate income tax return filing support for individuals, freelancers, professionals, and businesses.',
-    price: 'Starting from ₹999*',
+    price: 'Starting from Rs. 999*',
     featured: true
   },
   {
@@ -144,7 +154,7 @@ export const featuredServices: Service[] = [
     category: 'FSSAI Registration',
     description:
       'FSSAI registration and license support for food businesses based on business model and turnover.',
-    price: 'Starting from ₹999*',
+    price: 'Starting from Rs. 999*',
     featured: true
   },
   {
@@ -153,7 +163,7 @@ export const featuredServices: Service[] = [
     category: 'Startup & Business Registrations',
     description:
       'Startup India recognition support with document review and practical guidance for eligible startups.',
-    price: 'Starting from ₹4,999*'
+    price: 'Starting from Rs. 4,999*'
   },
   {
     title: 'MSME/Udyam Registration',
@@ -161,7 +171,7 @@ export const featuredServices: Service[] = [
     category: 'Startup & Business Registrations',
     description:
       'Udyam registration assistance for eligible micro, small, and medium enterprises.',
-    price: 'Starting from ₹999*'
+    price: 'Starting from Rs. 999*'
   },
   {
     title: 'GeM Registration',
@@ -169,7 +179,7 @@ export const featuredServices: Service[] = [
     category: 'Startup & Business Registrations',
     description:
       'Support for seller registration on Government e-Marketplace with document and profile guidance.',
-    price: 'Starting from ₹3,499*'
+    price: 'Starting from Rs. 3,499*'
   },
   {
     title: 'IEC Registration',
@@ -177,7 +187,7 @@ export const featuredServices: Service[] = [
     category: 'Startup & Business Registrations',
     description:
       'Import Export Code registration assistance for businesses involved in import or export activities.',
-    price: 'Starting from ₹2,999*'
+    price: 'Starting from Rs. 2,999*'
   },
   {
     title: 'ROC Compliance',
@@ -185,7 +195,7 @@ export const featuredServices: Service[] = [
     category: 'Annual Compliance',
     description:
       'ROC filing and annual compliance support for companies and LLPs with deadline-focused handling.',
-    price: 'Starting from ₹2,499*'
+    price: 'Starting from Rs. 2,499*'
   },
   {
     title: 'Trademark Registration',
@@ -193,7 +203,15 @@ export const featuredServices: Service[] = [
     category: 'Other Professional Services',
     description:
       'Trademark application support to help protect your brand name, logo, or business identity.',
-    price: 'Starting from ₹4,999*'
+    price: 'Starting from ₹999*'
+  },
+  {
+    title: 'FEMA Compliance',
+    slug: 'fema-compliance',
+    category: 'Other Professional Services',
+    description:
+      'Guidance and documentation support for eligible foreign investment, overseas transactions, and related FEMA compliance needs.',
+    price: 'Custom quote'
   },
   {
     title: 'OPC Registration',
@@ -201,7 +219,7 @@ export const featuredServices: Service[] = [
     category: 'Company Registration',
     description:
       'One Person Company registration support for solo founders seeking a corporate structure.',
-    price: 'Starting from ₹5,999*'
+    price: 'Starting from Rs. 5,999*'
   }
 ];
 
@@ -236,8 +254,8 @@ export const processSteps = [
 ];
 
 export const whyChooseUs = [
-  'Professional support from a Practicing Company Secretary firm',
-  'Simple explanations without legal jargon',
+  'Professional support for Indian business compliance',
+  'Clear explanations without confusing legal language',
   'Transparent pricing and clear scope',
   'Quick response and personal attention',
   'Online support for clients across India',

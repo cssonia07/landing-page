@@ -4,7 +4,17 @@
 
 :root {
   color-scheme: light;
-  --focus-ring: 0 0 0 3px rgba(185, 133, 45, 0.28);
+  --color-primary: #0f172a;
+  --color-secondary: #0f766e;
+  --color-accent: #f59e0b;
+  --color-background: #ffffff;
+  --color-muted: #f8fafc;
+  --color-soft: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-text: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --focus-ring: 0 0 0 3px rgba(15, 118, 110, 0.22);
 }
 
 html {
@@ -14,10 +24,11 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: #ffffff;
-  color: #1d2733;
+  background: var(--color-background);
+  color: var(--color-text);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   text-rendering: optimizeLegibility;
+  line-height: 1.6;
 }
 
 a,
@@ -25,7 +36,12 @@ button,
 input,
 select,
 textarea {
-  outline-color: #b9852d;
+  outline-color: var(--color-secondary);
+}
+
+::selection {
+  background: rgba(15, 118, 110, 0.16);
+  color: var(--color-primary);
 }
 
 a:focus-visible,
@@ -41,7 +57,7 @@ summary:focus-visible {
 .prose-service h2 {
   margin-top: 2rem;
   margin-bottom: 0.75rem;
-  color: #0d263d;
+  color: var(--color-primary);
   font-size: 1.35rem;
   line-height: 1.3;
   font-weight: 700;
@@ -49,7 +65,7 @@ summary:focus-visible {
 
 .prose-service h1 {
   margin-bottom: 1rem;
-  color: #0d263d;
+  color: var(--color-primary);
   font-size: 2rem;
   line-height: 1.2;
   font-weight: 800;
@@ -58,7 +74,7 @@ summary:focus-visible {
 .prose-service h3 {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
-  color: #123554;
+  color: var(--color-primary);
   font-size: 1.05rem;
   line-height: 1.4;
   font-weight: 700;
@@ -66,7 +82,7 @@ summary:focus-visible {
 
 .prose-service p {
   margin: 0.85rem 0;
-  color: #455464;
+  color: var(--color-text-secondary);
   line-height: 1.8;
 }
 
@@ -74,7 +90,7 @@ summary:focus-visible {
 .prose-service ol {
   margin: 0.85rem 0 1rem;
   padding-left: 1.25rem;
-  color: #455464;
+  color: var(--color-text-secondary);
   line-height: 1.8;
 }
 
@@ -85,10 +101,41 @@ summary:focus-visible {
 .prose-service hr {
   margin: 2rem 0;
   border: 0;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid var(--color-border);
 }
 
 .prose-service strong {
-  color: #123554;
+  color: var(--color-primary);
   font-weight: 700;
+}
+
+@layer components {
+  .section-pad {
+    @apply py-16 lg:py-20;
+  }
+
+  .premium-card {
+    @apply rounded-xl border border-slate-200 bg-white transition duration-200;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  }
+
+  .premium-card-hover {
+    @apply hover:-translate-y-1 hover:border-teal-500/40;
+  }
+
+  .premium-card-hover:hover {
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-teal-500 px-5 py-3 text-center text-sm font-bold text-white shadow-sm transition hover:bg-teal-600;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-center text-sm font-bold text-navy-900 transition hover:border-teal-500 hover:bg-teal-50 hover:text-teal-700;
+  }
+
+  .field-control {
+    @apply mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-sm text-navy-900 transition placeholder:text-slate-400 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20;
+  }
 }

@@ -93,7 +93,8 @@ const faqSchema = {
 const professionalServiceSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: `${site.name} - ${service.title}`,
+  name: `${site.firmName} - ${service.title}`,
+  alternateName: `${site.name} - ${service.title}`,
   url: `${site.url}/${service.slug}`,
   telephone: `+91${site.phone}`,
   email: site.serviceEmail,
@@ -108,7 +109,8 @@ const professionalServiceSchema = {
   serviceType: service.title,
   provider: {
     '@type': 'ProfessionalService',
-    name: site.name
+    name: site.firmName,
+    alternateName: site.name
   }
 };
 ---
@@ -128,7 +130,7 @@ const professionalServiceSchema = {
     secondaryLabel={service.ctaButtons[1]}
   />
 
-  <section class="bg-white py-14">
+  <section class="bg-white py-16 lg:py-20">
     <div class="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:px-8">
       <ServiceSection title="Overview" body={service.overview} />
       <ServiceSection title={service.whoNeedsHeading || 'Who Needs This Service'} items={service.whoNeeds} />
@@ -139,18 +141,18 @@ const professionalServiceSchema = {
       {service.importantContent && (
         <ServiceSection title="Important Content" body={[service.importantContent]} />
       )}
-      <section class="rounded border border-slate-200 bg-white p-6 shadow-sm">
+      <section class="premium-card p-6">
         <h2 class="text-2xl font-bold tracking-normal text-navy-900">FAQs</h2>
         <div class="mt-5">
           <FAQAccordion items={service.faqs} />
         </div>
       </section>
       {service.relatedServices && service.relatedServices.length > 0 && (
-        <section class="rounded border border-slate-200 bg-white p-6 shadow-sm">
+        <section class="premium-card p-6">
           <h2 class="text-2xl font-bold tracking-normal text-navy-900">Related Services</h2>
           <div class="mt-5 flex flex-wrap gap-3">
             {service.relatedServices.map((item: RelatedService) => (
-              <a href={item.href} class="rounded border border-slate-300 px-4 py-2 text-sm font-bold text-navy-900 hover:bg-slate-50">
+              <a href={item.href} class="rounded-lg border border-slate-300 px-4 py-2 text-sm font-bold text-navy-900 transition hover:border-teal-500 hover:bg-teal-50 hover:text-teal-700">
                 {item.label}
               </a>
             ))}

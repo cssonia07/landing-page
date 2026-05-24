@@ -1,21 +1,27 @@
 export const site = {
-  name: 'Sonia Gupta & Associates',
-  tagline: 'Business Registration, Tax Filing & Compliance Services',
-  url: 'https://soniaguptaassociates.com',
+  name: 'NiyamDesk',
+  firmName: 'Sonia Gupta & Associates',
+  legalName: 'Sonia Gupta & Associates',
+  alternateName: 'NiyamDesk',
+  domain: 'niyamdesk.in',
+  tagline: 'Business Registration, Filings & Compliance Support in India',
+  url: 'https://niyamdesk.in',
   phone: '8527285843',
   phoneHref: 'tel:+918527285843',
   whatsapp: '8527285843',
   whatsappUrl: 'https://wa.me/918527285843',
   whatsappMessage:
-    'Hello Sonia Gupta & Associates, I need help with business registration, tax filing, or compliance services.',
-  email: 'sonialegal2701@gmail.com',
-  emailHref: 'mailto:sonialegal2701@gmail.com',
-  serviceEmail: 'sonialegal2701@gmail.com',
-  serviceEmailHref: 'mailto:sonialegal2701@gmail.com',
+    'Hello NiyamDesk, I need help with business registration, tax filing, or compliance services.',
+  email: 'contact@niyamdesk.in',
+  emailHref: 'mailto:contact@niyamdesk.in',
+  serviceEmail: 'contact@niyamdesk.in',
+  serviceEmailHref: 'mailto:contact@niyamdesk.in',
   location: 'Noida, UP 201307',
   established: '2017-05-11',
+  footerDescription:
+    'NiyamDesk is the online trade name of Sonia Gupta & Associates, a Practicing Company Secretary firm providing business registration, tax filing, compliance, and related professional services in India.',
   keywords:
-    'GST registration, company registration, income tax filing, FSSAI registration, Startup India registration, GeM registration, IEC registration, ROC filing, business compliance services, company secretary in Noida, compliance services India'
+    'GST registration, GST return filing, GST notice support, company registration, LLP registration, OPC registration, income tax filing, FSSAI registration, Startup India registration, MSME Udyam registration, GeM registration, IEC registration, ROC compliance, trademark registration, FEMA compliance, business compliance services India'
 };
 
 export const navigation = [
@@ -37,4 +43,4 @@ export const footerLinks = [
 
 export const encodedWhatsAppUrl = `${site.whatsappUrl}?text=${encodeURIComponent(site.whatsappMessage)}`;
 export const serviceWhatsAppUrl =
-  'https://wa.me/918527285843?text=Hello%20Sonia%20Gupta%20%26%20Associates%2C%20I%20need%20help%20with%20business%20registration%2C%20tax%20filing%2C%20or%20compliance%20services.';
+  `${site.whatsappUrl}?text=${encodeURIComponent(site.whatsappMessage)}`;

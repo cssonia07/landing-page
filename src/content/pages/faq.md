@@ -1,4 +1,4 @@
-﻿## Frequently Asked Questions
+## Frequently Asked Questions
 
 ### General Questions
 
@@ -247,7 +247,7 @@ Where possible, the amount may be adjusted against the correct service, subject 
 You can contact us by phone, WhatsApp or email.
 
 **Phone / WhatsApp:** 8527285843  
-**Email:** sonialegal2701@gmail.com
+**Email:** contact@niyamdesk.in
 
 ---
 

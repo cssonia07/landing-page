@@ -5,24 +5,34 @@ export default {
     extend: {
       colors: {
         navy: {
-          50: '#eef4fb',
-          100: '#d8e7f5',
-          500: '#285b8c',
-          700: '#173f66',
-          800: '#123554',
-          900: '#0d263d'
+          50: '#f1f5f9',
+          100: '#e2e8f0',
+          500: '#334155',
+          700: '#1e293b',
+          800: '#172033',
+          900: '#0f172a'
+        },
+        teal: {
+          50: '#f0fdfa',
+          100: '#ccfbf1',
+          500: '#0f766e',
+          600: '#0d665f',
+          700: '#115e59'
         },
         accent: {
-          500: '#b9852d',
-          600: '#9b6f23'
+          50: '#fffbeb',
+          100: '#fef3c7',
+          500: '#f59e0b',
+          600: '#d97706'
         },
-        mist: '#f5f7fa'
+        mist: '#f8fafc'
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Arial', 'sans-serif']
       },
       boxShadow: {
-        soft: '0 16px 40px rgba(13, 38, 61, 0.08)'
+        soft: '0 18px 45px rgba(15, 23, 42, 0.08)',
+        card: '0 12px 30px rgba(15, 23, 42, 0.06)'
       }
     }
   },

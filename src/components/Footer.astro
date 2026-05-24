@@ -2,17 +2,24 @@
 import { encodedWhatsAppUrl, footerLinks, site } from '@data/site';
 ---
 
-<footer class="border-t border-slate-200 bg-navy-900 text-white">
-  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
+<footer class="border-t border-navy-800 bg-navy-900 text-white">
+  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
     <div>
-      <a href="/" class="text-xl font-bold">{site.name}</a>
+      <a href="/" class="inline-flex items-center" aria-label="NiyamDesk Home">
+        <img
+          src="/images/niyamdesk-logo.png"
+          alt="NiyamDesk logo"
+          class="h-10 w-auto md:h-12"
+          loading="lazy"
+        />
+      </a>
       <p class="mt-3 max-w-xl text-sm leading-7 text-slate-300">
-        Helping businesses stay compliant with simple, professional, and reliable support.
+        {site.footerDescription}
       </p>
       <div class="mt-5 flex flex-wrap gap-3">
-        <a href={site.phoneHref} class="rounded border border-white/20 px-4 py-2 text-sm font-semibold hover:bg-white/10">Call {site.phone}</a>
-        <a href={encodedWhatsAppUrl} target="_blank" rel="noopener noreferrer" class="rounded bg-accent-500 px-4 py-2 text-sm font-semibold text-navy-900 hover:bg-accent-600 hover:text-white">
-          WhatsApp
+        <a href={site.phoneHref} class="rounded-lg border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-teal-400 hover:bg-white/10">Call {site.phone}</a>
+        <a href={encodedWhatsAppUrl} target="_blank" rel="noopener noreferrer" class="rounded-lg bg-teal-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-teal-600">
+          Talk on WhatsApp
         </a>
       </div>
     </div>
@@ -21,7 +28,7 @@ import { encodedWhatsAppUrl, footerLinks, site } from '@data/site';
       <h2 class="text-sm font-bold uppercase tracking-wide text-slate-300">Quick Links</h2>
       <nav class="mt-4 grid grid-cols-2 gap-2" aria-label="Footer navigation">
         {footerLinks.map((link) => (
-          <a href={link.href} class="text-sm text-slate-300 hover:text-white">{link.label}</a>
+          <a href={link.href} class="text-sm text-slate-300 transition hover:text-teal-300">{link.label}</a>
         ))}
       </nav>
     </div>
@@ -29,14 +36,14 @@ import { encodedWhatsAppUrl, footerLinks, site } from '@data/site';
     <div>
       <h2 class="text-sm font-bold uppercase tracking-wide text-slate-300">Contact</h2>
       <address class="mt-4 not-italic text-sm leading-7 text-slate-300">
-        <a href={site.phoneHref} class="block hover:text-white">Phone: {site.phone}</a>
-        <a href={site.emailHref} class="block hover:text-white">Email: {site.email}</a>
+        <a href={site.phoneHref} class="block transition hover:text-teal-300">Phone: {site.phone}</a>
+        <a href={site.emailHref} class="block transition hover:text-teal-300">Email: {site.email}</a>
         <span class="block">WhatsApp: {site.whatsapp}</span>
         <span class="block">Office: {site.location}</span>
       </address>
     </div>
   </div>
   <div class="border-t border-white/10 px-4 py-5 text-center text-xs text-slate-400">
-    © {new Date().getFullYear()} {site.name}. All rights reserved.
+    &copy; {new Date().getFullYear()} {site.name}. All rights reserved. Operated by {site.firmName}.
   </div>
 </footer>

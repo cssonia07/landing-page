@@ -1,8 +1,10 @@
-﻿## About Sonia Gupta & Associates
+## About NiyamDesk
 
 ### Simplifying Business Registration, Tax Filing and Compliance for Indian Businesses
 
-Sonia Gupta & Associates is a firm of Practicing Company Secretaries established on **11th May 2017** by **PCS Sonia Gupta**.
+NiyamDesk is the online platform/trade name of Sonia Gupta & Associates, a Practicing Company Secretary firm established on 11th May 2017 by PCS Sonia Gupta.
+
+Through NiyamDesk, Sonia Gupta & Associates provides professional support for GST, company registration, income tax filing, FSSAI registration, Startup India registration, MSME/Udyam, GeM registration, IEC, ROC filings, FEMA compliance, and related business compliance services.
 
 We provide professional support to startups, entrepreneurs, freelancers, e-commerce sellers, small businesses and growing companies for business registration, tax filing, compliance management and related legal documentation.
 
@@ -84,7 +86,7 @@ We explain the process, documents, fees and expected timeline in simple language
 Clients are guided step by step, from inquiry to documentation to filing and completion.
 
 ### Personal Attention
-We do not treat compliance as a mechanical form-filing activity. We understand the client’s business need before suggesting the right service.
+We do not treat compliance as a mechanical form-filing activity. We understand the client's business need before suggesting the right service.
 
 ### Online Convenience
 Most services can be handled through phone, email, WhatsApp and online document sharing.
@@ -125,13 +127,11 @@ We keep you informed and guide you if any additional query or action is required
 
 ---
 
-## Founder Note
+## Our Promise
 
 Starting and running a business in India can feel complicated because there are many registrations, filings, tax requirements and compliance deadlines. Most business owners do not need complicated explanations. They need clear guidance, correct documentation and timely support.
 
-At Sonia Gupta & Associates, our focus is to make compliance simple, structured and dependable for every client.
-
-— **PCS Sonia Gupta**
+At NiyamDesk, operated by Sonia Gupta & Associates, our focus is to make compliance simple, structured and dependable for every client.
 
 ---
 

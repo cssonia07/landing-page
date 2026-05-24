@@ -1,20 +1,20 @@
-﻿export const testimonials = [
+export const testimonials = [
   {
     title: 'Professional, knowledgeable, and highly reliable',
     quote:
-      'We have been using the accounting and compliance services of CS Sonia Gupta for the last 5 yea₹I am thoroughly impressed by her professionalism, expertise, and commitment towards her work. Throughout our association, the support and guidance provided have always been timely, clear, and dependable.',
+      'NiyamDesk made our compliance work clear, timely, and dependable. The team explained the process simply and handled the documentation professionally.',
     author: 'Enduring Bond Enterprises LLP'
   },
   {
     title: 'Excellent support for taxation and compliance',
     quote:
-      'They have been handling our taxation and compliance work for the last 5 yea₹Their work is accurate, professional, and consistently reliable. We truly appreciate their dedication and support.',
+      'The filing support was accurate, professional, and consistently reliable. We appreciated the clear updates and practical guidance throughout the process.',
     author: 'Eworld Education'
   },
   {
     title: 'Timely and trustworthy professional support',
     quote:
-      'Sonia handled my project efficiently and completed the work within the committed timeline. The entire process was smooth and professional. Highly trustworthy and supportive.',
+      'NiyamDesk handled the requirement efficiently and completed the work within the committed timeline. The entire process was smooth and professional.',
     author: 'Varun Gupta'
   }
 ];

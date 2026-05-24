@@ -1,8 +1,10 @@
-﻿## Refund Policy
+## Refund Policy
 
-**Effective Date:** [Add Date]
+**Effective Date:** May 11, 2026
 
-At **Sonia Gupta & Associates**, we aim to provide clear, professional and reliable services. Before making payment, clients are encouraged to understand the service scope, required documents, expected process and applicable charges.
+At **NiyamDesk, operated by Sonia Gupta & Associates**, we aim to provide clear, professional and reliable services. Before making payment, clients are encouraged to understand the service scope, required documents, expected process and applicable charges.
+
+This website, **niyamdesk.in**, is operated under the trade name **NiyamDesk** by **Sonia Gupta & Associates**, a Practicing Company Secretary firm.
 
 This Refund Policy explains when a refund may or may not be available for professional services booked through our website, phone, WhatsApp, email or any other communication channel.
 
@@ -114,7 +116,7 @@ To request a refund, please email us with the following details:
 - Payment proof
 - Reason for refund request
 
-**Email:** sonialegal2701@gmail.com
+**Email:** contact@niyamdesk.in
 
 Refund requests should be submitted within **7 days from the payment date**. Requests received after this period may not be considered, unless there is a genuine and reasonable cause.
 
@@ -150,9 +152,12 @@ This policy is designed to be fair to both the client and the professional servi
 
 ## 13. Contact for Refund Queries
 
-**Sonia Gupta & Associates**  
-**Email:** sonialegal2701@gmail.com  
+**NiyamDesk**  
+Operated by **Sonia Gupta & Associates**  
+**Email:** contact@niyamdesk.in  
 **Phone:** 8527285843  
-**Office Address:** [Add full office address]
+**Website:** niyamdesk.in  
+**Location:** Noida, UP 201307  
+**Service Area:** Online support across India
 
 ---

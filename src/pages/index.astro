@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Hero from '@components/Hero.astro';
+import AboutSection from '@components/AboutSection.astro';
 import SectionHeading from '@components/SectionHeading.astro';
-import ServiceCard from '@components/ServiceCard.astro';
+import ServicesGrid from '@components/ServicesGrid.astro';
 import TestimonialCard from '@components/TestimonialCard.astro';
 import FAQAccordion from '@components/FAQAccordion.astro';
 import CTASection from '@components/CTASection.astro';
@@ -11,9 +12,9 @@ import { faqs } from '@data/faqs';
 import { featuredServices, processSteps, serviceCategories, whoWeHelp, whyChooseUs } from '@data/services';
 import { testimonials } from '@data/testimonials';
 
-const title = 'Sonia Gupta & Associates | GST, Company Registration & Compliance Services in India';
+const title = 'NiyamDesk by Sonia Gupta & Associates | GST, Company Registration & Compliance Services';
 const description =
-  'Professional support for GST registration, company incorporation, income tax filing, FSSAI, Startup India, GeM, IEC, ROC filings, and business compliance services across India.';
+  'NiyamDesk is operated by Sonia Gupta & Associates, a Practicing Company Secretary firm providing GST registration, company incorporation, income tax filing, FSSAI, Startup India, GeM, IEC, ROC filing, and business compliance services across India.';
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -30,74 +31,40 @@ const faqSchema = {
 
 <BaseLayout title={title} description={description} schema={faqSchema}>
   <Hero
-    title="Simplifying Business Registration & Compliance for Indian Businesses"
-    description="Professional support for GST, company registration, income tax filing, FSSAI registration, startup registrations, GeM registration, IEC, annual ROC filings, and related business legal services."
+    title="Business Compliance Made Clear for Indian Entrepreneurs"
+    description="NiyamDesk by Sonia Gupta & Associates helps startups, small businesses, freelancers, and entrepreneurs manage registrations, filings, and compliance requirements with clear guidance and professional support."
   />
 
-  <section class="bg-white py-16">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <SectionHeading
-        title="About Sonia Gupta & Associates"
-        description="Sonia Gupta & Associates is a firm of Practicing Company Secretaries established on 11th May 2017 by PCS Sonia Gupta."
-      />
-      <div class="mt-8 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-        <div class="space-y-5 text-base leading-8 text-slate-600">
-          <p>
-            We help startups, entrepreneurs, freelancers, and businesses handle registration, taxation, and compliance work in a simple, professional, and structured manner. Our focus is to remove confusion from legal and regulatory processes and give business owners a clear path from inquiry to completion.
-          </p>
-          <p>
-            We support clients with GST services, company incorporation, income tax filings, FSSAI registration, Startup India registration, MSME/Udyam, GeM registration, IEC registration, annual compliance, and other business compliance requirements.
-          </p>
-          <div class="rounded border border-slate-200 bg-mist p-5">
-            <h3 class="text-lg font-bold text-navy-900">Our Approach</h3>
-            <p class="mt-2 text-sm leading-7 text-slate-600">
-              Clear communication. Timely filings. Accurate documentation. Practical advice. Ongoing support.
-            </p>
-          </div>
-        </div>
-        <div class="grid gap-3 sm:grid-cols-2">
-          {whoWeHelp.map((item) => (
-            <div class="rounded border border-slate-200 bg-white p-4 text-sm font-semibold leading-6 text-slate-700 shadow-sm">
-              {item}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
+  <AboutSection
+    title="About NiyamDesk"
+    description="NiyamDesk is the online platform of Sonia Gupta & Associates, a Practicing Company Secretary firm established on 11th May 2017 by PCS Sonia Gupta."
+    body={[
+      'Through NiyamDesk, Sonia Gupta & Associates helps startups, entrepreneurs, freelancers, and businesses handle registration, taxation, and compliance work in a simple, professional, and structured manner.',
+      'We support clients with GST services, company incorporation, income tax filings, FSSAI registration, Startup India registration, MSME/Udyam, GeM registration, IEC registration, ROC compliance, trademark registration, FEMA compliance, and other business requirements.'
+    ]}
+    highlightTitle="Our Approach"
+    highlightText="Clear communication. Timely filings. Accurate documentation. Practical advice. Ongoing support."
+    highlights={whoWeHelp.map((item) => ({ title: item }))}
+    background="white"
+  />
 
-  <section class="bg-mist py-16">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <SectionHeading
-        eyebrow="Services"
-        title="Registration, Taxation & Compliance Support"
-        description="Choose focused support for one requirement or ongoing compliance assistance for your business."
-      />
-      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {featuredServices.slice(0, 6).map((service) => (
-          <ServiceCard
-            title={service.title}
-            description={service.description}
-            href={`/${service.slug}`}
-            price={service.price}
-            category={service.category}
-          />
-        ))}
-      </div>
-      <div class="mt-8">
-        <a href="/services" class="inline-flex rounded bg-navy-900 px-5 py-3 text-sm font-bold text-white hover:bg-navy-800">
-          View All Services
-        </a>
-      </div>
-    </div>
-  </section>
+  <ServicesGrid
+    eyebrow="Services"
+    title="Registration, Taxation & Compliance Support"
+    description="Choose focused support for one requirement or ongoing compliance assistance for your business."
+    services={featuredServices}
+    limit={6}
+    ctaHref="/services"
+    ctaLabel="View All Services"
+    background="soft"
+  />
 
-  <section class="bg-white py-16">
+  <section class="bg-white section-pad">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <SectionHeading eyebrow="Coverage" title="Service Categories" />
       <div class="mt-10 grid gap-5 md:grid-cols-2">
         {serviceCategories.map((category) => (
-          <article class="rounded border border-slate-200 bg-white p-6 shadow-sm">
+          <article class="premium-card premium-card-hover p-6">
             <h3 class="text-xl font-bold text-navy-900">{category.title}</h3>
             <p class="mt-3 text-sm leading-7 text-slate-600">{category.description}</p>
             <ul class="mt-5 grid gap-2 text-sm text-slate-700 sm:grid-cols-2">
@@ -109,13 +76,13 @@ const faqSchema = {
     </div>
   </section>
 
-  <section class="bg-mist py-16">
+  <section class="bg-mist section-pad">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <SectionHeading eyebrow="Our Process" title="How It Works" />
       <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
         {processSteps.map((step, index) => (
-          <article class="rounded border border-slate-200 bg-white p-5 shadow-sm">
-            <span class="text-sm font-bold text-accent-600">Step {index + 1}</span>
+          <article class="premium-card premium-card-hover p-5">
+            <span class="inline-flex rounded-full bg-accent-50 px-3 py-1 text-sm font-bold text-accent-600">Step {index + 1}</span>
             <h3 class="mt-2 text-lg font-bold text-navy-900">{step.title}</h3>
             <p class="mt-3 text-sm leading-7 text-slate-600">{step.text}</p>
           </article>
@@ -124,12 +91,12 @@ const faqSchema = {
     </div>
   </section>
 
-  <section class="bg-white py-16">
+  <section class="bg-white section-pad">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <SectionHeading eyebrow="Why Choose Us" title="Why Clients Work With Us" />
       <div class="mt-10 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
         {whyChooseUs.map((point) => (
-          <div class="rounded border border-slate-200 bg-white p-4 text-sm font-semibold leading-6 text-slate-700 shadow-sm">
+          <div class="premium-card premium-card-hover p-4 text-sm font-semibold leading-6 text-slate-700">
             {point}
           </div>
         ))}
@@ -137,7 +104,7 @@ const faqSchema = {
     </div>
   </section>
 
-  <section class="bg-mist py-16">
+  <section class="bg-mist section-pad">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <SectionHeading
         eyebrow="Client Feedback"
@@ -150,14 +117,14 @@ const faqSchema = {
     </div>
   </section>
 
-  <section class="bg-white py-16">
+  <section class="bg-white section-pad">
     <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
       <SectionHeading eyebrow="FAQ" title="Frequently Asked Questions" description="A few common questions before you start a filing, registration, or compliance engagement." />
       <FAQAccordion items={faqs} />
     </div>
   </section>
 
-  <section class="bg-mist py-16">
+  <section class="bg-mist section-pad">
     <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
       <div>
         <SectionHeading

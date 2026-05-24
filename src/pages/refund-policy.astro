@@ -2,8 +2,8 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { site } from '@data/site';
 
-const title = 'Refund Policy | Sonia Gupta & Associates';
-const description = 'Read the Refund Policy for professional services provided by Sonia Gupta & Associates, including cancellation, non-refundable fees, government charges and refund request process.';
+const title = 'Refund Policy | NiyamDesk';
+const description = 'Read the Refund Policy for professional services booked through NiyamDesk, operated by Sonia Gupta & Associates, including cancellation, non-refundable fees and refund request process.';
 const pages = await Astro.glob('../content/pages/refund-policy.md');
 const { Content } = pages[0];
 const schema = {
@@ -17,9 +17,9 @@ const schema = {
 ---
 
 <BaseLayout title={title} description={description} schema={schema}>
-  <section class="bg-mist py-16">
+  <section class="bg-white py-16 lg:py-20">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-      <div class="prose-service rounded border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div class="prose-service rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
         <Content />
       </div>
     </div>

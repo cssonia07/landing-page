@@ -1,6 +1,6 @@
-# Sonia Gupta & Associates Website
+# NiyamDesk Website
 
-Professional Astro + Tailwind CSS website for a Practicing Company Secretary firm offering GST, company registration, income tax filing, FSSAI, Startup India, MSME/Udyam, GeM, IEC, ROC filings, annual compliance, and related services in India.
+Professional Astro + Tailwind CSS website for a compliance and registration firm offering GST, company registration, income tax filing, FSSAI, Startup India, MSME/Udyam, GeM, IEC, ROC compliance, trademark registration, FEMA compliance, and related services in India.
 
 ## Tech Stack
 
@@ -64,6 +64,7 @@ PUBLIC_CLARITY_ID=xxxxxxxxxx
 
 - `/gst-registration`
 - `/gst-return-filing`
+- `/gst-notice-support`
 - `/company-registration`
 - `/llp-registration`
 - `/opc-registration`
@@ -75,6 +76,7 @@ PUBLIC_CLARITY_ID=xxxxxxxxxx
 - `/iec-registration`
 - `/roc-compliance`
 - `/trademark-registration`
+- `/fema-compliance`
 
 ## Netlify
 

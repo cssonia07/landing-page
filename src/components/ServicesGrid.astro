@@ -1,0 +1,51 @@
+---
+import SectionHeading from '@components/SectionHeading.astro';
+import ServiceCard from '@components/ServiceCard.astro';
+import type { Service } from '@data/services';
+
+interface Props {
+  services: Service[];
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  limit?: number;
+  ctaHref?: string;
+  ctaLabel?: string;
+  background?: 'white' | 'soft';
+}
+
+const {
+  services,
+  eyebrow,
+  title,
+  description,
+  limit,
+  ctaHref,
+  ctaLabel,
+  background = 'soft'
+} = Astro.props;
+
+const visibleServices = typeof limit === 'number' ? services.slice(0, limit) : services;
+---
+
+<section class:list={[background === 'soft' ? 'bg-mist' : 'bg-white', 'section-pad']}>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    {title && <SectionHeading eyebrow={eyebrow} title={title} description={description} />}
+    <div class:list={[title ? 'mt-10' : '', 'grid gap-5 md:grid-cols-2 lg:grid-cols-3']}>
+      {visibleServices.map((service) => (
+        <ServiceCard
+          title={service.title}
+          description={service.description}
+          href={`/${service.slug}`}
+          price={service.price}
+          category={service.category}
+        />
+      ))}
+    </div>
+    {ctaHref && ctaLabel && (
+      <div class="mt-8">
+        <a href={ctaHref} class="btn-primary">{ctaLabel}</a>
+      </div>
+    )}
+  </div>
+</section>

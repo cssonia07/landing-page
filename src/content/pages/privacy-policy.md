@@ -1,10 +1,12 @@
-﻿## Privacy Policy
+## Privacy Policy
 
-**Effective Date:** [Add Date]
+**Effective Date:** May 11, 2026
 
-At **Sonia Gupta & Associates**, we respect your privacy and are committed to protecting the personal and business information shared with us through our website, WhatsApp, email, phone, inquiry forms, consultation forms, document submission channels, and other communication methods.
+At **NiyamDesk, operated by Sonia Gupta & Associates**, we respect your privacy and are committed to protecting the personal and business information shared with us through our website, WhatsApp, email, phone, inquiry forms, consultation forms, document submission channels, and other communication methods.
 
-This Privacy Policy explains how we collect, use, store, share, and protect your information when you visit our website or use our professional services.
+This website, **niyamdesk.in**, is operated under the trade name **NiyamDesk** by **Sonia Gupta & Associates**, a Practicing Company Secretary firm.
+
+This Privacy Policy explains how we collect, use, store, share, and protect your information when you visit the NiyamDesk website or use professional services provided by Sonia Gupta & Associates.
 
 By using our website or sharing your information with us, you agree to the terms of this Privacy Policy.
 
@@ -182,7 +184,7 @@ You may contact us to:
 
 Requests may be sent to:
 
-**Email:** sonialegal2701@gmail.com  
+**Email:** contact@niyamdesk.in  
 **Phone:** 8527285843
 
 ---
@@ -195,7 +197,7 @@ You may opt out of promotional communication at any time by contacting us. Howev
 
 ---
 
-## 13. Children’s Privacy
+## 13. Children's Privacy
 
 Our services are intended for businesses, entrepreneurs and adults. We do not knowingly collect personal information from minors. If such information is accidentally received, please contact us for appropriate action.
 
@@ -213,9 +215,12 @@ The updated version will be posted on this page with a revised effective date.
 
 For any questions, concerns or requests related to this Privacy Policy, please contact:
 
-**Sonia Gupta & Associates**  
-**Email:** sonialegal2701@gmail.com  
+**NiyamDesk**  
+Operated by **Sonia Gupta & Associates**  
+**Email:** contact@niyamdesk.in  
 **Phone:** 8527285843  
-**Office Address:** [Add full office address]
+**Website:** niyamdesk.in  
+**Location:** Noida, UP 201307  
+**Service Area:** Online support across India
 
 ---

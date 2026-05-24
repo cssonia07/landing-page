@@ -1,8 +1,8 @@
-﻿## Terms & Conditions
+## Terms & Conditions
 
-**Effective Date:** [Add Date]
+**Effective Date:** May 11, 2026
 
-Welcome to the website of **Sonia Gupta & Associates**.
+Welcome to **niyamdesk.in**, operated under the trade name **NiyamDesk** by **Sonia Gupta & Associates**, a Practicing Company Secretary firm.
 
 These Terms & Conditions govern your use of our website, inquiry forms, consultation services, document submission process and professional services. By accessing our website or engaging our services, you agree to comply with these Terms & Conditions.
 
@@ -12,7 +12,7 @@ If you do not agree with these terms, please do not use the website or our servi
 
 ## 1. About Us
 
-Sonia Gupta & Associates is a firm of Practicing Company Secretaries established on 11th May 2017 by PCS Sonia Gupta. The firm provides professional support for business registration, compliance, tax filing, corporate filings, FEMA compliance and related advisory services.
+NiyamDesk is the website/trade name of Sonia Gupta & Associates. Sonia Gupta & Associates is the professional firm that provides support for business registration, compliance, tax filing, corporate filings, FEMA compliance and related advisory services.
 
 Our services may include GST registration, GST return filing, company registration, LLP registration, OPC registration, partnership firm registration, income tax return filing, FSSAI registration, Startup India registration, MSME/Udyam registration, GeM registration, IEC registration, ROC filings, annual compliance, documentation support, FEMA compliance and other related services.
 
@@ -37,7 +37,7 @@ We reserve the right to restrict access to the website or refuse service if misu
 
 ## 3. Nature of Services
 
-The services provided by Sonia Gupta & Associates are professional compliance, registration, filing, documentation and advisory support services.
+The services available through NiyamDesk are professional compliance, registration, filing, documentation and advisory support services provided by Sonia Gupta & Associates.
 
 We assist with preparation, documentation, application filing, return filing, compliance management, response drafting and related procedural support.
 
@@ -152,7 +152,7 @@ By sharing documents, the client authorizes us to use those documents for the re
 
 ## 11. Intellectual Property
 
-All website content, text, service descriptions, design elements, templates, checklists, forms, graphics and materials are the property of Sonia Gupta & Associates unless otherwise stated.
+All website content, text, service descriptions, design elements, templates, checklists, forms, graphics and materials are the property of NiyamDesk and/or Sonia Gupta & Associates unless otherwise stated.
 
 You may not copy, reproduce, modify, distribute, publish or use our website content for commercial purposes without written permission.
 
@@ -215,7 +215,7 @@ Continued use of the website or services after updates means you accept the revi
 
 These Terms & Conditions shall be governed by the laws of India.
 
-Any dispute shall be subject to the jurisdiction of courts at [Add City/State], unless otherwise required by applicable law.
+Any dispute shall be subject to the jurisdiction of competent courts in India, unless otherwise required by applicable law.
 
 ---
 
@@ -223,9 +223,12 @@ Any dispute shall be subject to the jurisdiction of courts at [Add City/State], 
 
 For any questions regarding these Terms & Conditions, please contact:
 
-**Sonia Gupta & Associates**  
-**Email:** sonialegal2701@gmail.com  
+**NiyamDesk**  
+Operated by **Sonia Gupta & Associates**  
+**Email:** contact@niyamdesk.in  
 **Phone:** 8527285843  
-**Office Address:** [Add full office address]
+**Website:** niyamdesk.in  
+**Location:** Noida, UP 201307  
+**Service Area:** Online support across India
 
 ---

@@ -1,8 +1,10 @@
-﻿## Disclaimer
+## Disclaimer
 
-**Effective Date:** [Add Date]
+**Effective Date:** May 11, 2026
 
 The information provided on this website is for general informational and educational purposes only. The content is intended to help visitors understand business registration, tax filing, compliance and related professional services in a simple manner.
+
+This website, **niyamdesk.in**, is operated under the trade name **NiyamDesk** by **Sonia Gupta & Associates**, a Practicing Company Secretary firm.
 
 By using this website, you agree to this Disclaimer.
 
@@ -102,9 +104,12 @@ We reserve the right to refuse service if the purpose, documents or information 
 
 For clarification regarding this Disclaimer, please contact:
 
-**Sonia Gupta & Associates**  
-**Email:** sonialegal2701@gmail.com  
+**NiyamDesk**  
+Operated by **Sonia Gupta & Associates**  
+**Email:** contact@niyamdesk.in  
 **Phone:** 8527285843  
-**Office Address:** [Add full office address]
+**Website:** niyamdesk.in  
+**Location:** Noida, UP 201307  
+**Service Area:** Online support across India
 
 ---

@@ -53,8 +53,8 @@ process:
   - "Status is tracked"
   - "Objection/hearing support handled separately if required"
 pricing:
-  - "Trademark Application — Recommended starting from ₹4,999*"
-pricingNote: "*Government fees, objection reply, hearing, renewal, and legal representation are extra."
+  - "Trademark Application — Starting from ₹999*"
+pricingNote: "*Government fees, objection reply, hearing, renewal, legal representation, and additional professional work are charged separately wherever applicable."
 faqs:
   - question: "Can I trademark my business name?"
     answer: "Yes, if the mark is eligible and not conflicting with existing marks."
