@@ -1,0 +1,246 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import CTASection from '@components/CTASection.astro';
+import { site } from '@data/site';
+
+const title = 'Who Should Take GST Registration in India? | GST Registration Guide';
+const description =
+  'Understand who should take GST registration in India, including turnover limits, interstate supply, e-commerce sellers, casual taxable persons, reverse charge cases, documents, and penalties.';
+const publishedDate = '2026-06-13';
+const articleUrl = '/blog/who-should-take-gst-registration-in-india';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Who Should Take GST Registration in India?', href: articleUrl }
+];
+
+const requiredCases = [
+  'Businesses crossing the GST turnover limit applicable to their category',
+  'Persons making interstate taxable supply, subject to applicable GST rules and exemptions',
+  'E-commerce sellers and persons supplying through online marketplaces where registration is required',
+  'Casual taxable persons doing taxable business in a state where they do not have a fixed place of business',
+  'Non-resident taxable persons',
+  'Persons required to pay tax under reverse charge in specified cases',
+  'Input Service Distributors',
+  'Agents or persons supplying goods or services on behalf of another taxable person',
+  'Persons required to deduct TDS or collect TCS under GST',
+  'Businesses that were required to register under earlier indirect tax laws, where applicable'
+];
+
+const documents = [
+  'PAN card of the proprietor, firm, company, LLP, or other applicant',
+  'Aadhaar card and photograph of proprietor, partner, director, or authorized signatory',
+  'Mobile number and email ID',
+  'Business address proof, such as electricity bill, rent agreement, ownership proof, or NOC',
+  'Bank account details or cancelled cheque, where required',
+  'Partnership deed, LLP agreement, incorporation certificate, or other entity documents, if applicable',
+  'Board resolution or authorization letter, if applicable',
+  'Digital Signature Certificate, where required for company or LLP applicants'
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbItems.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.label,
+      item: `${site.url}${item.href === '/' ? '' : item.href}`
+    }))
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Who Should Take GST Registration in India?',
+    description,
+    datePublished: publishedDate,
+    dateModified: publishedDate,
+    author: {
+      '@type': 'Organization',
+      name: site.firmName,
+      alternateName: site.name
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: site.firmName,
+      alternateName: site.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${site.url}/images/niyamdesk-logo.png`
+      }
+    },
+    mainEntityOfPage: `${site.url}${articleUrl}`
+  }
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <div class="border-b border-slate-200 bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={breadcrumbItems} />
+    </div>
+  </div>
+
+  <article class="bg-white">
+    <header class="bg-mist section-pad">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <p class="text-sm font-bold uppercase tracking-wide text-teal-700">GST Guide</p>
+        <h1 class="mt-3 text-4xl font-extrabold tracking-normal text-navy-900 md:text-5xl">
+          Who Should Take GST Registration in India?
+        </h1>
+        <p class="mt-5 text-base leading-8 text-slate-600">
+          GST registration is an important step for many Indian businesses, freelancers, traders, service providers, e-commerce sellers, startups, and professionals. This guide explains when GST registration may be required and why timely registration matters.
+        </p>
+        <p class="mt-4 text-sm font-semibold text-slate-500">Published by {site.name} | {publishedDate}</p>
+      </div>
+    </header>
+
+    <div class="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] lg:px-8">
+      <div class="prose-service max-w-4xl">
+        <p>
+          GST registration means getting a Goods and Services Tax Identification Number, commonly called GSTIN, from the GST department. Once registered, a business may be required to charge GST on taxable supplies, file GST returns, maintain proper records, and follow GST rules.
+        </p>
+
+        <p>
+          Whether GST registration is required depends on your turnover, type of supply, place of supply, business model, and specific GST provisions. In some cases, registration is compulsory even if turnover is low.
+        </p>
+
+        <h2>What Is GST Registration?</h2>
+        <p>
+          GST registration is the official registration of a business or person under India&apos;s GST law. After approval, the applicant receives a GSTIN. This number is used for GST invoices, GST return filing, input tax credit, and communication with the GST department.
+        </p>
+        <p>
+          A GST-registered person generally needs to follow regular GST compliance, including invoicing rules, return filing, tax payment where applicable, and record keeping.
+        </p>
+
+        <h2>Who Is Required to Take GST Registration in India?</h2>
+        <p>
+          GST registration may be required for businesses and professionals who cross the prescribed turnover limit or fall under mandatory registration categories. This can include small businesses, freelancers, service providers, traders, manufacturers, e-commerce sellers, and startups.
+        </p>
+
+        <h2>Turnover Limits for GST Registration</h2>
+        <p>
+          As a general rule, GST registration is required when aggregate turnover crosses the prescribed limit. For many service providers, the general threshold is Rs. 20 lakh. For many goods suppliers, the general threshold is Rs. 40 lakh. In special category states and certain cases, lower limits may apply.
+        </p>
+        <p>
+          Turnover limits can depend on the nature of supply, state, notifications, and changes in law. A business should check the applicable rule before deciding that GST registration is not needed.
+        </p>
+
+        <h2>Mandatory GST Registration Cases</h2>
+        <p>
+          Some persons must take GST registration even if their turnover has not crossed the normal threshold. Common examples include:
+        </p>
+        <ul>
+          {requiredCases.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <h2>Interstate Supply</h2>
+        <p>
+          Interstate supply means supplying goods or services from one state to another. Under GST, interstate supply can trigger registration requirements in many cases. However, there are specific exemptions and rules for certain service providers and categories.
+        </p>
+        <p>
+          Because interstate supply rules can be fact-specific, businesses selling or serving customers outside their state should get their position checked before starting or expanding operations.
+        </p>
+
+        <h2>E-commerce Sellers</h2>
+        <p>
+          Sellers using e-commerce platforms or online marketplaces may need GST registration depending on the type of product or service, platform model, and applicable GST provisions. Many marketplace sellers are required to register even at a low turnover.
+        </p>
+        <p>
+          E-commerce sellers should also understand GST return filing, tax collection at source, invoices, and input tax credit before they begin selling online.
+        </p>
+
+        <h2>Casual Taxable Person</h2>
+        <p>
+          A casual taxable person is someone who occasionally supplies taxable goods or services in a state or union territory where they do not have a fixed place of business. Examples may include temporary stalls, exhibitions, trade fairs, or event-based sales in another state.
+        </p>
+        <p>
+          Casual taxable persons generally need GST registration before making taxable supplies, and they may need to follow special timelines and deposit requirements.
+        </p>
+
+        <h2>Reverse Charge Cases</h2>
+        <p>
+          Reverse charge means the recipient, instead of the supplier, is required to pay GST in specified cases. If a person is liable to pay GST under reverse charge, GST registration may be required depending on the facts and applicable provisions.
+        </p>
+        <p>
+          Reverse charge can apply in selected goods, services, import of services, and notified transactions. The correct treatment should be checked before payment or filing.
+        </p>
+
+        <h2>Why Input Tax Credit Matters</h2>
+        <p>
+          Input tax credit, often called ITC, allows a GST-registered business to claim credit of eligible GST paid on purchases and expenses. This can reduce the final GST payable, subject to GST rules and documentation.
+        </p>
+        <p>
+          Without GST registration, a business usually cannot claim input tax credit. For businesses with significant taxable purchases, registration may be commercially useful even when it is not compulsory.
+        </p>
+
+        <h2>Voluntary GST Registration</h2>
+        <p>
+          A person may choose voluntary GST registration even if registration is not compulsory. This may help when the business wants to sell to GST-registered clients, claim input tax credit, supply through certain platforms, or build a more formal business profile.
+        </p>
+        <p>
+          Voluntary registration also brings responsibilities. Once registered, the person must follow GST return filing, invoicing, tax payment, and compliance requirements. It should be chosen after understanding the ongoing obligations.
+        </p>
+
+        <h2>Documents Required for GST Registration</h2>
+        <p>
+          Documents vary depending on whether the applicant is a proprietor, partnership firm, LLP, company, trust, society, or other entity. Common documents include:
+        </p>
+        <ul>
+          {documents.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <h2>Consequences of Not Taking GST Registration When Required</h2>
+        <p>
+          If GST registration is required but not taken, the business may face tax demand, interest, penalty, restriction on input tax credit, problems in issuing GST invoices, and difficulty in dealing with customers or platforms that require GST details.
+        </p>
+        <p>
+          Delayed registration may also create filing and documentation complications. It is better to check GST applicability before crossing turnover limits, starting interstate supply, or selling through online platforms.
+        </p>
+
+        <h2>How NiyamDesk Can Help</h2>
+        <p>
+          NiyamDesk, the online trade name of Sonia Gupta & Associates, helps Indian businesses understand whether GST registration is required and assists with the application process. We can help with document review, application preparation, GST portal filing, clarification support, and next-step guidance after registration.
+        </p>
+        <p>
+          You may also need related support such as <a href="/gst-return-filing">GST Return Filing</a>, <a href="/gst-notice-support">GST Notice Support</a>, or ongoing compliance guidance after registration.
+        </p>
+
+        <div class="mt-10 rounded-xl border border-teal-200 bg-teal-50 p-6">
+          <h2 class="mt-0 text-2xl font-bold tracking-normal text-navy-900">Need help with GST registration?</h2>
+          <p class="mb-0 text-base leading-8 text-slate-700">
+            Contact NiyamDesk for professional assistance. We will review your facts, explain the documents and process in simple language, and help you proceed correctly.
+          </p>
+          <div class="mt-5 flex flex-col gap-3 sm:flex-row">
+            <a href="/gst-registration" class="btn-primary">View GST Registration Service</a>
+            <a href="/contact" class="btn-secondary">Contact NiyamDesk</a>
+          </div>
+        </div>
+
+        <div class="mt-8 rounded-xl border border-slate-200 bg-slate-50 p-5">
+          <h2 class="mt-0 text-lg font-bold text-navy-900">Disclaimer</h2>
+          <p class="mb-0 text-sm leading-7 text-slate-600">
+            This article is for general information only. GST registration applicability can change based on facts, business model, state, notifications, and current law. Professional advice may be required before taking any decision.
+          </p>
+        </div>
+      </div>
+
+      <aside class="lg:sticky lg:top-28 lg:self-start">
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+          <h2 class="text-lg font-bold text-navy-900">Related Services</h2>
+          <nav class="mt-4 grid gap-2 text-sm font-semibold">
+            <a href="/gst-registration" class="rounded-lg bg-white px-3 py-2 text-slate-700 transition hover:text-teal-700">GST Registration</a>
+            <a href="/gst-return-filing" class="rounded-lg bg-white px-3 py-2 text-slate-700 transition hover:text-teal-700">GST Return Filing</a>
+            <a href="/gst-notice-support" class="rounded-lg bg-white px-3 py-2 text-slate-700 transition hover:text-teal-700">GST Notice Support</a>
+            <a href="/contact" class="rounded-lg bg-white px-3 py-2 text-slate-700 transition hover:text-teal-700">Contact NiyamDesk</a>
+          </nav>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  <CTASection title="Need help with GST registration?" description="Contact NiyamDesk for professional assistance with GST registration, documents, filing, and post-registration compliance guidance." />
+</BaseLayout>
