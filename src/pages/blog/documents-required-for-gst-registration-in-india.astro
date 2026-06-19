@@ -1,0 +1,459 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import CTASection from '@components/CTASection.astro';
+import { site } from '@data/site';
+
+const title = 'Documents Required for GST Registration in India: Complete Checklist | NiyamDesk';
+const description =
+  'Complete checklist of documents required for GST registration in India for proprietorship, partnership firm, LLP, private limited company, OPC, HUF, trust and society.';
+const publishedDate = '2026-06-19';
+const articleUrl = '/blog/documents-required-for-gst-registration-in-india';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Documents Required for GST Registration in India', href: articleUrl }
+];
+
+const tocItems = [
+  { label: 'Basic Documents Required', href: '#basic-documents-required-for-gst-registration' },
+  { label: 'PAN Card', href: '#1-pan-card' },
+  { label: 'Aadhaar and Identity', href: '#2-aadhaar-card-and-identity-details' },
+  { label: 'Business Address Proof', href: '#4-business-address-proof' },
+  { label: 'Bank Account Proof', href: '#5-bank-account-proof' },
+  { label: 'Proof of Constitution', href: '#6-proof-of-constitution-of-business' },
+  { label: 'Common Mistakes', href: '#common-mistakes-to-avoid' },
+  { label: 'Quick Checklist', href: '#quick-gst-registration-checklist' }
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbItems.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.label,
+      item: `${site.url}${item.href === '/' ? '' : item.href}`
+    }))
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: 'Documents Required for GST Registration in India: Complete Checklist',
+    description,
+    datePublished: publishedDate,
+    dateModified: publishedDate,
+    author: {
+      '@type': 'Organization',
+      name: site.firmName,
+      alternateName: site.name
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: site.firmName,
+      alternateName: site.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${site.url}/images/niyamdesk-logo.png`
+      }
+    },
+    mainEntityOfPage: `${site.url}${articleUrl}`
+  }
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <div class="border-b border-slate-200 bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={breadcrumbItems} />
+    </div>
+  </div>
+
+  <article class="bg-white">
+    <header class="bg-mist section-pad">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <p class="text-sm font-bold uppercase tracking-wide text-teal-700">GST Guide</p>
+        <h1 class="mt-3 text-4xl font-extrabold tracking-normal text-navy-900 md:text-5xl">
+          Documents Required for GST Registration in India: Complete Checklist
+        </h1>
+        <p class="mt-5 text-base leading-8 text-slate-600">
+          Applying for GST registration is easier when documents are properly arranged in advance. Most delays happen because business address proof, ownership proof, authorisation documents, or PAN details do not match the application.
+        </p>
+        <p class="mt-4 text-sm font-semibold text-slate-500">Published by {site.name} | {publishedDate}</p>
+      </div>
+    </header>
+
+    <div class="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] lg:px-8">
+      <div class="prose-service max-w-4xl">
+        <p>
+          GST registration is applied for online through FORM GST REG-01. The applicant must provide PAN, mobile number, email address, business details, details of promoters/partners/directors, bank details, and documents relating to the principal place of business.
+        </p>
+        <p>
+          If you are still checking whether registration is required, read our earlier guide on <a href="/blog/who-should-take-gst-registration-in-india">who should take GST registration in India</a>.
+        </p>
+
+        <h2 id="basic-documents-required-for-gst-registration">Basic Documents Required for GST Registration</h2>
+        <p>
+          The following documents are commonly required for most normal GST registration applications:
+        </p>
+        <ul>
+          <li>PAN card of the applicant/business</li>
+          <li>Aadhaar card of proprietor, partners, or directors</li>
+          <li>Photograph of proprietor, partners, directors, or authorised signatory</li>
+          <li>Mobile number and email ID for OTP verification</li>
+          <li>Proof of principal place of business</li>
+          <li>Bank account proof</li>
+          <li>Proof of constitution of business</li>
+          <li>Authorisation document for authorised signatory, where applicable</li>
+        </ul>
+
+        <h2 id="1-pan-card">1. PAN Card</h2>
+        <p>
+          The PAN requirement depends on the constitution of the business.
+        </p>
+        <div class="my-6 overflow-x-auto rounded-xl border border-slate-200">
+          <table class="w-full min-w-[36rem] divide-y divide-slate-200 text-left text-sm">
+            <thead class="bg-slate-50 text-navy-900">
+              <tr>
+                <th class="px-4 py-3 font-bold">Type of business</th>
+                <th class="px-4 py-3 font-bold">PAN generally required</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 text-slate-700">
+              <tr><td class="px-4 py-3">Proprietorship</td><td class="px-4 py-3">PAN of proprietor</td></tr>
+              <tr><td class="px-4 py-3">Partnership firm</td><td class="px-4 py-3">PAN of partnership firm</td></tr>
+              <tr><td class="px-4 py-3">LLP</td><td class="px-4 py-3">PAN of LLP</td></tr>
+              <tr><td class="px-4 py-3">Private Limited Company</td><td class="px-4 py-3">PAN of company</td></tr>
+              <tr><td class="px-4 py-3">OPC</td><td class="px-4 py-3">PAN of company</td></tr>
+              <tr><td class="px-4 py-3">HUF</td><td class="px-4 py-3">PAN of HUF</td></tr>
+              <tr><td class="px-4 py-3">Trust or Society</td><td class="px-4 py-3">PAN of trust/society</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          The legal name entered in the GST application should match the name appearing in PAN records.
+        </p>
+
+        <h2 id="2-aadhaar-card-and-identity-details">2. Aadhaar Card and Identity Details</h2>
+        <p>
+          Aadhaar details of the proprietor, partners, directors, Karta, managing trustee, or authorised signatory may be required depending on the type of applicant.
+        </p>
+        <p>
+          Aadhaar authentication may also be required during the GST registration process. In some cases, biometric Aadhaar authentication, photograph capture, and verification of original documents may be required.
+        </p>
+
+        <h2 id="3-photograph">3. Photograph</h2>
+        <p>
+          Recent photograph of the following persons is generally required:
+        </p>
+        <ul>
+          <li>Proprietor, in case of proprietorship</li>
+          <li>All partners or authorised partner, in case of partnership firm</li>
+          <li>Designated partners, in case of LLP</li>
+          <li>Directors or authorised signatory, in case of company</li>
+          <li>Karta, in case of HUF</li>
+          <li>Managing trustee or authorised person, in case of trust or society</li>
+        </ul>
+
+        <h2 id="4-business-address-proof">4. Business Address Proof</h2>
+        <p>
+          Business address proof is one of the most important parts of GST registration.
+        </p>
+        <p>
+          The documents required depend on whether the premises are owned, rented, shared, or used with consent of another person.
+        </p>
+
+        <h3>A. If the business premises are owned</h3>
+        <p>
+          Any ownership-supporting document may be used, such as:
+        </p>
+        <ul>
+          <li>Latest property tax receipt</li>
+          <li>Municipal khata or similar ownership record</li>
+          <li>Electricity bill in the owner's name</li>
+          <li>Sale deed or ownership document</li>
+          <li>Other valid document supporting ownership of premises</li>
+        </ul>
+
+        <h3>B. If the premises are rented or leased</h3>
+        <p>
+          Generally keep:
+        </p>
+        <ul>
+          <li>Rent agreement or lease agreement</li>
+          <li>Electricity bill, property tax receipt, or other ownership proof of landlord</li>
+          <li>NOC from landlord, if required</li>
+        </ul>
+        <p>
+          A rent agreement without supporting ownership evidence of the landlord can create avoidable clarification or delay.
+        </p>
+
+        <h3>C. If the premises are shared or used with consent</h3>
+        <p>
+          For example, a proprietor may run a business from a parent's home, spouse's home, relative's property, or a shared office.
+        </p>
+        <p>
+          Generally keep:
+        </p>
+        <ul>
+          <li>Consent letter or NOC from the owner</li>
+          <li>Owner's identity proof, where required</li>
+          <li>Electricity bill, property tax receipt, or ownership proof of premises</li>
+        </ul>
+
+        <h3>D. If business is run from home</h3>
+        <p>
+          GST registration can generally be taken using a residential address where the business is actually operated, subject to proper address proof and consent documents where applicable.
+        </p>
+        <p>
+          Do not use an address casually just to obtain GST registration. The address shown in GST should be genuine and available for verification, correspondence, and business records.
+        </p>
+
+        <h2 id="5-bank-account-proof">5. Bank Account Proof</h2>
+        <p>
+          Bank account proof is generally required for the business or proprietor, depending on the constitution of the applicant.
+        </p>
+        <p>
+          Common documents include:
+        </p>
+        <ul>
+          <li>Cancelled cheque</li>
+          <li>First page of bank passbook</li>
+          <li>Bank statement</li>
+          <li>Bank account details showing account holder name, account number, and IFSC code</li>
+        </ul>
+        <p>
+          Use a clear document. A blurred cheque image or bank statement without name/details can cause objections.
+        </p>
+
+        <h2 id="6-proof-of-constitution-of-business">6. Proof of Constitution of Business</h2>
+        <p>
+          The documents vary according to the business structure.
+        </p>
+
+        <h3>Proprietorship</h3>
+        <p>
+          Usually required:
+        </p>
+        <ul>
+          <li>PAN of proprietor</li>
+          <li>Aadhaar of proprietor</li>
+          <li>Business address proof</li>
+          <li>Bank proof</li>
+          <li>Photograph</li>
+        </ul>
+        <p>
+          A separate incorporation certificate is not applicable for a proprietorship.
+        </p>
+
+        <h3>Partnership Firm</h3>
+        <p>
+          Usually required:
+        </p>
+        <ul>
+          <li>PAN of partnership firm</li>
+          <li>Partnership deed</li>
+          <li>PAN/Aadhaar of partners</li>
+          <li>Business address proof</li>
+          <li>Bank proof</li>
+          <li>Authorisation letter, if one partner is authorised to act for GST matters</li>
+        </ul>
+
+        <h3>LLP</h3>
+        <p>
+          Usually required:
+        </p>
+        <ul>
+          <li>PAN of LLP</li>
+          <li>LLP incorporation certificate</li>
+          <li>LLP agreement</li>
+          <li>PAN/Aadhaar of designated partners</li>
+          <li>Business address proof</li>
+          <li>Authorisation document for authorised signatory</li>
+          <li>Bank proof</li>
+        </ul>
+
+        <h3>Private Limited Company or OPC</h3>
+        <p>
+          Usually required:
+        </p>
+        <ul>
+          <li>PAN of company</li>
+          <li>Certificate of Incorporation</li>
+          <li>Memorandum of Association and Articles of Association, where required</li>
+          <li>PAN/Aadhaar of directors</li>
+          <li>Board resolution or authorisation letter for authorised signatory</li>
+          <li>Business address proof</li>
+          <li>Bank proof</li>
+          <li>Digital Signature Certificate, where applicable</li>
+        </ul>
+
+        <h3>HUF</h3>
+        <p>
+          Usually required:
+        </p>
+        <ul>
+          <li>PAN of HUF</li>
+          <li>PAN/Aadhaar of Karta</li>
+          <li>HUF declaration or supporting document</li>
+          <li>Business address proof</li>
+          <li>Bank proof</li>
+        </ul>
+
+        <h3>Trust, Society or Association</h3>
+        <p>
+          Usually required:
+        </p>
+        <ul>
+          <li>PAN of trust/society/association</li>
+          <li>Registration certificate</li>
+          <li>Trust deed, bye-laws, or constitution document</li>
+          <li>PAN/Aadhaar of managing trustee or authorised person</li>
+          <li>Authorisation letter or resolution</li>
+          <li>Business address proof</li>
+          <li>Bank proof</li>
+        </ul>
+
+        <h2 id="7-authorised-signatory-documents">7. Authorised Signatory Documents</h2>
+        <p>
+          Where the GST application is filed by someone other than the proprietor or where an entity appoints a representative, the application may require an authorisation document.
+        </p>
+        <p>
+          Examples:
+        </p>
+        <ul>
+          <li>Authorisation letter</li>
+          <li>Board resolution for company</li>
+          <li>Partner authorisation letter for partnership</li>
+          <li>LLP authorisation for designated partner or authorised signatory</li>
+          <li>Trust or society resolution</li>
+        </ul>
+        <p>
+          The authorised signatory's email ID and mobile number are important because GST communications, OTPs, notices, and registration updates may be sent through the registered contact details.
+        </p>
+
+        <h2 id="8-digital-signature-certificate">8. Digital Signature Certificate</h2>
+        <p>
+          A Digital Signature Certificate may be required in certain cases, especially for companies and LLPs. Keep the DSC ready before final submission if applicable.
+        </p>
+
+        <h2 id="9-documents-for-additional-place-of-business">9. Documents for Additional Place of Business</h2>
+        <p>
+          If the applicant has branch offices, godowns, warehouses, or additional offices in the same state, address proof may also be required for each additional place of business.
+        </p>
+        <p>
+          For every additional location, maintain:
+        </p>
+        <ul>
+          <li>Ownership proof, or</li>
+          <li>Rent agreement, or</li>
+          <li>Consent/NOC along with owner's supporting document</li>
+        </ul>
+
+        <h2 id="10-documents-for-special-gst-registrations">10. Documents for Special GST Registrations</h2>
+        <p>
+          Some applicants need additional documents depending on their category.
+        </p>
+        <div class="my-6 overflow-x-auto rounded-xl border border-slate-200">
+          <table class="w-full min-w-[38rem] divide-y divide-slate-200 text-left text-sm">
+            <thead class="bg-slate-50 text-navy-900">
+              <tr>
+                <th class="px-4 py-3 font-bold">Applicant type</th>
+                <th class="px-4 py-3 font-bold">Additional document examples</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 text-slate-700">
+              <tr><td class="px-4 py-3">Non-resident taxable person</td><td class="px-4 py-3">Passport and prescribed registration documents</td></tr>
+              <tr><td class="px-4 py-3">Casual taxable person</td><td class="px-4 py-3">Business details and place-of-business documents in the relevant state</td></tr>
+              <tr><td class="px-4 py-3">TDS deductor</td><td class="px-4 py-3">Government/authority details and authorisation</td></tr>
+              <tr><td class="px-4 py-3">Input Service Distributor</td><td class="px-4 py-3">Details of entity and locations</td></tr>
+              <tr><td class="px-4 py-3">E-commerce operator</td><td class="px-4 py-3">Legal entity and business documents</td></tr>
+              <tr><td class="px-4 py-3">Foreign company/entity</td><td class="px-4 py-3">Incorporation and authorised representative documents</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+        <p>
+          Before submitting the application, check these points carefully:
+        </p>
+        <ol>
+          <li>Legal name should match PAN exactly.</li>
+          <li>Trade name should be entered correctly.</li>
+          <li>Business address and uploaded proof should match.</li>
+          <li>Rent agreement should clearly mention the premises.</li>
+          <li>NOC should be signed by the owner.</li>
+          <li>Electricity bill should be recent and readable.</li>
+          <li>Bank proof should clearly show account holder details.</li>
+          <li>Partner/director details should match PAN and Aadhaar records.</li>
+          <li>Authorisation documents should be properly signed.</li>
+          <li>Upload clear PDF or image files; unreadable documents cause delays.</li>
+        </ol>
+
+        <h2 id="quick-gst-registration-checklist">Quick GST Registration Checklist</h2>
+        <ul>
+          <li>PAN card</li>
+          <li>Aadhaar card</li>
+          <li>Photograph</li>
+          <li>Mobile number and email ID</li>
+          <li>Business address proof</li>
+          <li>Rent agreement/NOC, where applicable</li>
+          <li>Electricity bill/property tax receipt/ownership proof</li>
+          <li>Bank proof</li>
+          <li>Partnership deed/LLP agreement/incorporation certificate, as applicable</li>
+          <li>Authorisation letter/board resolution, where applicable</li>
+          <li>DSC, where applicable</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>
+          The exact documents required for GST registration depend on the type of business and the nature of the business premises. The most common reasons for delay are incomplete address proof, missing NOC, mismatch in PAN details, and improper authorisation documents.
+        </p>
+        <p>
+          Before filing the application, verify the documents carefully. A properly prepared application reduces the risk of clarification notices and delays.
+        </p>
+        <p>
+          For assistance with <a href="/gst-registration">GST registration</a>, document review, GST return filing, amendments, and GST compliance support, <a href="/contact">contact NiyamDesk</a>.
+        </p>
+        <p>
+          Website: <a href="https://niyamdesk.in">https://niyamdesk.in</a>
+        </p>
+
+        <div class="mt-10 rounded-xl border border-teal-200 bg-teal-50 p-6">
+          <h2 class="mt-0 text-2xl font-bold tracking-normal text-navy-900">Need help preparing GST documents?</h2>
+          <p class="mb-0 text-base leading-8 text-slate-700">
+            Contact NiyamDesk for professional assistance with GST registration, document review, amendments, and GST compliance support.
+          </p>
+          <div class="mt-5 flex flex-col gap-3 sm:flex-row">
+            <a href="/gst-registration" class="btn-primary">View GST Registration Service</a>
+            <a href="/contact" class="btn-secondary">Contact NiyamDesk</a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="lg:sticky lg:top-28 lg:self-start">
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+          <h2 class="text-lg font-bold text-navy-900">Table of Contents</h2>
+          <nav class="mt-4 grid gap-2 text-sm font-semibold">
+            {tocItems.map((item) => (
+              <a href={item.href} class="rounded-lg bg-white px-3 py-2 text-slate-700 transition hover:text-teal-700">{item.label}</a>
+            ))}
+          </nav>
+        </div>
+
+        <div class="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-5">
+          <h2 class="text-lg font-bold text-navy-900">Related Links</h2>
+          <nav class="mt-4 grid gap-2 text-sm font-semibold">
+            <a href="/gst-registration" class="rounded-lg bg-white px-3 py-2 text-slate-700 transition hover:text-teal-700">GST Registration</a>
+            <a href="/blog/who-should-take-gst-registration-in-india" class="rounded-lg bg-white px-3 py-2 text-slate-700 transition hover:text-teal-700">Who Should Take GST Registration?</a>
+            <a href="/contact" class="rounded-lg bg-white px-3 py-2 text-slate-700 transition hover:text-teal-700">Contact NiyamDesk</a>
+          </nav>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  <CTASection title="Need help with GST registration?" description="Contact NiyamDesk for assistance with GST registration documents, application filing, GST return filing, amendments, and compliance support." />
+</BaseLayout>
