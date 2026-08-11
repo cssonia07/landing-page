@@ -1,0 +1,335 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import FAQAccordion from '@components/FAQAccordion.astro';
+import { encodedWhatsAppUrl, site } from '@data/site';
+
+const title = 'Leave Encashment Tax Rules & Exemption Limit in India | NiyamDesk';
+const description =
+  'Understand leave encashment tax rules in India, Section 10(10AA), ₹25 lakh exemption limit, calculation method and tax treatment for employees.';
+const articleUrl = '/blog/leave-encashment-tax-rules-india';
+const publishedDate = '2026-08-11';
+const updatedDate = '2026-08-11';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Leave Encashment Tax Rules in India', href: articleUrl }
+];
+
+const tocItems = [
+  { label: 'What is leave encashment?', href: '#what-is-leave-encashment' },
+  { label: 'During employment', href: '#leave-encashment-during-employment' },
+  { label: 'At retirement', href: '#leave-encashment-at-retirement' },
+  { label: '₹25 lakh limit', href: '#important-25-lakh-limit' },
+  { label: 'Calculation example', href: '#practical-calculation-example' },
+  { label: 'Common problems', href: '#common-problems' },
+  { label: 'Documents to keep', href: '#documents-to-keep' },
+  { label: 'Reporting in the ITR', href: '#how-to-report-in-itr' },
+  { label: 'FAQs', href: '#frequently-asked-questions' }
+];
+
+const problems = [
+  {
+    problem: 'Assuming the entire leave encashment is tax-free',
+    solution: 'First identify when the payment was received and the employer type, then calculate the exemption allowed by law.'
+  },
+  {
+    problem: 'Treating ₹25 lakh as an automatic exemption',
+    solution: 'Apply all four prescribed limits. The lowest figure—not the ceiling by itself—is the exempt amount.'
+  },
+  {
+    problem: 'Using total or gross salary',
+    solution: 'Use only the prescribed salary components: basic salary, qualifying dearness allowance and eligible turnover-based commission.'
+  },
+  {
+    problem: 'Ignoring the 30-days-per-year restriction',
+    solution: 'Rework eligible earned leave using no more than 30 days for each completed year of service with the current employer.'
+  },
+  {
+    problem: 'Forgetting an exemption claimed from a previous employer',
+    solution: 'Check past returns and settlement records because earlier claims can reduce the remaining aggregate ceiling.'
+  },
+  {
+    problem: 'Confusion because the employer deducted TDS',
+    solution: 'TDS is tax collected in advance, not the final tax decision. Reconcile it with Form 16 and the correct exemption calculation.'
+  },
+  {
+    problem: 'Not checking Form 16 before filing the ITR',
+    solution: 'Compare the salary, exemption and TDS figures in Form 16 with the final settlement statement before filing.'
+  },
+  {
+    problem: 'Reporting the exemption incorrectly in the ITR',
+    solution: 'Report the eligible exemption in the field for Section 10(10AA) and retain the calculation supporting that amount.'
+  },
+  {
+    problem: 'Not keeping settlement or leave-balance documents',
+    solution: 'Obtain and retain employer-certified records showing service, leave balance, salary components and the amount paid.'
+  }
+];
+
+const documents = [
+  'Form 16',
+  'Salary slips',
+  'Retirement or final settlement statement',
+  'Employer leave encashment calculation',
+  'Leave balance statement',
+  'Employment or service records',
+  'Details of previous leave encashment exemptions, if any',
+  'TDS details',
+  'Relevant employer certificate or supporting document'
+];
+
+const faqs = [
+  { question: 'Is leave encashment taxable in India?', answer: 'It can be taxable. The treatment depends mainly on whether it is received during employment or at retirement and whether the employer is a qualifying Government employer.' },
+  { question: 'Is leave encashment received during employment taxable?', answer: 'Yes. It is generally taxable as salary. Relief under Section 89 may be relevant in an eligible case, but it is not automatic.' },
+  { question: 'Is leave encashment tax-free for Government employees?', answer: 'For qualifying Central or State Government employees, leave salary received at retirement is fully exempt under Section 10(10AA)(i). The rule should be checked against the employee and payment facts.' },
+  { question: 'What is the leave encashment exemption limit for private employees?', answer: 'The statutory ceiling is ₹25 lakh for eligible retirement leave encashment, but the actual exemption is the lowest amount under the prescribed four-part calculation.' },
+  { question: 'Is the entire ₹25 lakh automatically exempt?', answer: 'No. ₹25 lakh is only one of four limits, and it is also an aggregate ceiling. The calculated exemption may be much lower.' },
+  { question: 'How is leave encashment exemption calculated?', answer: 'For an eligible non-Government employee at retirement, compare the actual receipt, ₹25 lakh ceiling, 10 months’ average salary and cash equivalent of eligible unused leave. The lowest is exempt.' },
+  { question: 'What salary is considered for leave encashment calculation?', answer: 'It generally includes basic salary, dearness allowance forming part of retirement benefits and commission fixed as a percentage of turnover, where applicable.' },
+  { question: 'Is HRA included in average salary for leave encashment calculation?', answer: 'No. HRA is generally not included in the prescribed average-salary calculation.' },
+  { question: 'What happens if I received leave encashment from two employers?', answer: 'Eligible exemptions from more than one employer remain subject to the aggregate statutory ceiling and the calculation applicable to each payment.' },
+  { question: 'What if I already claimed leave encashment exemption in an earlier year?', answer: 'The available statutory ceiling may need to be reduced by the exemption already claimed under Section 10(10AA)(ii).' },
+  { question: 'Where is leave encashment shown in the Income Tax Return?', answer: 'The taxable part remains under salary income. The eligible exempt part should be entered in the relevant Section 10(10AA) exemption field in the applicable ITR utility.' },
+  { question: 'Can TDS be deducted on leave encashment?', answer: 'Yes. An employer may deduct TDS after considering the taxable salary and information available to it. The final treatment should still be checked while filing the return.' }
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbItems.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.label,
+      item: `${site.url}${item.href === '/' ? '' : item.href}`
+    }))
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Leave Encashment: Tax Rules, Exemption Limit & Calculation in India',
+    description,
+    datePublished: publishedDate,
+    dateModified: updatedDate,
+    author: { '@type': 'Organization', name: site.firmName, alternateName: site.name },
+    publisher: {
+      '@type': 'Organization',
+      name: site.firmName,
+      alternateName: site.name,
+      logo: { '@type': 'ImageObject', url: `${site.url}/images/niyamdesk-logo.png` }
+    },
+    mainEntityOfPage: `${site.url}${articleUrl}`
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer }
+    }))
+  }
+];
+---
+
+<BaseLayout title={title} description={description} canonical={articleUrl} ogType="article" schema={schema}>
+  <div class="border-b border-slate-200 bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={breadcrumbItems} />
+    </div>
+  </div>
+
+  <article class="bg-white">
+    <header class="bg-mist section-pad">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <p class="text-sm font-bold uppercase tracking-wide text-teal-700">Income Tax Guide</p>
+        <h1 class="mt-3 text-4xl font-extrabold leading-tight tracking-normal text-navy-900 md:text-5xl">
+          Leave Encashment: Tax Rules, Exemption Limit &amp; Calculation in India
+        </h1>
+        <p class="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+          Employees often accumulate paid or earned leave during employment. Depending on the employer’s policy, eligible unused leave may be converted into money—commonly called leave encashment. Its tax treatment depends mainly on when the amount is received and the type of employer.
+        </p>
+        <p class="mt-4 text-sm font-semibold text-slate-500">Published by {site.name} <span aria-hidden="true">•</span> Last Updated: August 2026</p>
+      </div>
+    </header>
+
+    <div class="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] lg:px-8 lg:py-14">
+      <div class="prose-service min-w-0 max-w-4xl">
+        <section aria-labelledby="quick-answer" class="mb-10 rounded-xl border border-teal-200 bg-teal-50 p-5 sm:p-6">
+          <h2 id="quick-answer" class="mt-0 text-2xl font-bold text-navy-900">Quick Answer</h2>
+          <ol class="mb-0 mt-4 space-y-3">
+            <li><strong>During employment:</strong> Leave encashment received while a person is still in employment is generally taxable as salary.</li>
+            <li><strong>Government employees at retirement:</strong> Eligible leave encashment is fully exempt under Section 10(10AA), subject to the provision’s conditions.</li>
+            <li><strong>Non-Government employees at retirement:</strong> Eligible leave encashment exemption is available under Section 10(10AA), subject to the prescribed calculation and limits.</li>
+          </ol>
+        </section>
+
+        <h2 id="what-is-leave-encashment">What Is Leave Encashment?</h2>
+        <p>
+          Suppose an employee earns paid leave every year but does not use all of it. The organisation’s leave policy may allow the employee to receive money against the accumulated unused leave. That payment is leave encashment.
+        </p>
+        <p>
+          Rules for earning, accumulating and encashing leave can differ between employers. The employer’s policy determines the leave entitlement, while the Income-tax Act determines how the payment is taxed.
+        </p>
+
+        <h2 id="leave-encashment-during-employment">Leave Encashment During Employment</h2>
+        <p>
+          Leave encashment received while continuing in employment is generally taxable as salary. It is not covered by the retirement exemption merely because the payment relates to accumulated earned leave.
+        </p>
+        <div class="my-6 rounded-xl border border-accent-500/30 bg-accent-50 p-5">
+          <p class="m-0 text-sm leading-7 text-slate-700"><strong>Section 89 relief:</strong> Relief may be relevant in an eligible situation where the conditions are satisfied. It is not automatic and should be examined separately based on the year-wise salary and applicable rules.</p>
+        </div>
+
+        <h2 id="leave-encashment-at-retirement">Leave Encashment at Retirement</h2>
+        <p>Section 10(10AA) provides different treatment for qualifying Government employees and other employees.</p>
+
+        <h3 id="government-employees">A. Government Employees</h3>
+        <p>
+          Under Section 10(10AA)(i), leave salary received at retirement by a qualifying Central or State Government employee is fully exempt. The exemption applies to the cash equivalent of leave salary for the period of earned leave standing to the employee’s credit at retirement, whether retirement is on superannuation or otherwise.
+        </p>
+        <p>
+          The expression “Government employee” for this purpose should not be assumed to cover every employee of a public-sector undertaking, government company, local authority or other government-linked organisation. The employee’s legal status and the facts of the payment should be checked.
+        </p>
+
+        <h3 id="private-employees">B. Non-Government / Private-Sector Employees</h3>
+        <p>
+          For an eligible non-Government employee receiving leave encashment on retirement, the leave salary exemption under Section 10(10AA)(ii) is the <strong>lowest</strong> of these four amounts:
+        </p>
+        <ol class="space-y-2">
+          <li>Actual leave encashment received</li>
+          <li>₹25,00,000 statutory exemption ceiling</li>
+          <li>10 months’ average salary</li>
+          <li>Cash equivalent of eligible unutilised earned leave, based on average salary</li>
+        </ol>
+        <p>
+          For this calculation, earned leave entitlement is restricted to a maximum of <strong>30 days for each completed year of service with the current employer</strong>. Leave already taken must be reduced when arriving at the eligible unused balance.
+        </p>
+
+        <div class="my-6 rounded-xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
+          <h3 class="mt-0">Average Salary</h3>
+          <p><strong>Average salary = average of the salary for the 10 months immediately preceding retirement.</strong></p>
+          <p>For this purpose, salary generally includes:</p>
+          <ul>
+            <li>Basic salary</li>
+            <li>Dearness allowance, to the extent it forms part of retirement benefits</li>
+            <li>Commission based on a fixed percentage of turnover, where applicable</li>
+          </ul>
+          <p class="mb-0">HRA, bonus and unrelated allowances are generally not included in this prescribed calculation.</p>
+        </div>
+
+        <h2 id="important-25-lakh-limit">Important ₹25 Lakh Exemption Limit</h2>
+        <div class="my-6 rounded-xl border-l-4 border-accent-500 bg-accent-50 p-5 sm:p-6">
+          <p class="m-0 text-lg font-bold leading-8 text-navy-900">₹25 lakh is the maximum statutory ceiling—it does not mean every employee automatically gets a ₹25 lakh exemption.</p>
+        </div>
+        <p>
+          The ceiling for eligible non-Government leave encashment has been ₹25 lakh from 1 April 2023 under Notification No. 31/2023. The actual leave encashment tax exemption can be lower because the prescribed “least of” calculation must still be applied.
+        </p>
+        <p>
+          The ₹25 lakh amount is also an <strong>aggregate limit</strong>. If exemption under Section 10(10AA)(ii) was claimed in an earlier year, the available ceiling may need to be reduced by the exemption already availed. Payments from more than one employer are also subject to the aggregate statutory limit.
+        </p>
+
+        <h2 id="practical-calculation-example">Practical Leave Encashment Calculation Example</h2>
+        <p>Consider the following illustrative facts for a private-sector employee:</p>
+        <div class="my-6 overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+          <div class="grid gap-3 bg-slate-50 p-5 text-sm sm:grid-cols-2 sm:p-6">
+            <p class="m-0"><strong>Completed service</strong><br />20 years</p>
+            <p class="m-0"><strong>Average salary</strong><br />₹80,000 per month</p>
+            <p class="m-0"><strong>Eligible unused leave</strong><br />240 days / 8 months</p>
+            <p class="m-0"><strong>Actual amount received</strong><br />₹9,00,000</p>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full min-w-[34rem] divide-y divide-slate-200 text-left text-sm">
+              <thead class="bg-white text-navy-900">
+                <tr><th class="px-5 py-3 font-bold">Prescribed limit</th><th class="px-5 py-3 font-bold">Calculation</th><th class="px-5 py-3 text-right font-bold">Amount</th></tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 text-slate-700">
+                <tr><td class="px-5 py-3">Actual amount received</td><td class="px-5 py-3">Actual payment</td><td class="px-5 py-3 text-right font-semibold">₹9,00,000</td></tr>
+                <tr><td class="px-5 py-3">Statutory ceiling</td><td class="px-5 py-3">Maximum ceiling</td><td class="px-5 py-3 text-right font-semibold">₹25,00,000</td></tr>
+                <tr><td class="px-5 py-3">10 months’ average salary</td><td class="px-5 py-3">10 × ₹80,000</td><td class="px-5 py-3 text-right font-semibold">₹8,00,000</td></tr>
+                <tr><td class="px-5 py-3">Cash equivalent of eligible leave</td><td class="px-5 py-3">8 × ₹80,000</td><td class="px-5 py-3 text-right font-semibold">₹6,40,000</td></tr>
+              </tbody>
+              <tfoot class="divide-y divide-teal-200 bg-teal-50 text-navy-900">
+                <tr><th class="px-5 py-3" colspan="2">Exempt leave encashment (lowest amount)</th><td class="px-5 py-3 text-right font-bold">₹6,40,000</td></tr>
+                <tr><th class="px-5 py-3" colspan="2">Taxable portion (₹9,00,000 − ₹6,40,000)</th><td class="px-5 py-3 text-right font-bold">₹2,60,000</td></tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <p class="text-sm">
+          <strong>Illustration only:</strong> An actual calculation depends on facts including completed service, leave entitlement and utilisation, previous exemptions, employer history and salary structure.
+        </p>
+
+        <h2 id="common-problems">Common Leave Encashment Tax Problems Employees Face</h2>
+        <div class="not-prose mt-6 grid gap-4 sm:grid-cols-2">
+          {problems.map((item) => (
+            <section class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+              <h3 class="text-base font-bold leading-6 text-navy-900">{item.problem}</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600"><strong class="text-teal-700">Solution:</strong> {item.solution}</p>
+            </section>
+          ))}
+        </div>
+
+        <h2 id="documents-to-keep">Documents to Keep</h2>
+        <p>Keep a clear working paper and supporting records, including:</p>
+        <ul class="grid gap-x-6 sm:grid-cols-2">
+          {documents.map((document) => <li>{document}</li>)}
+        </ul>
+        <p>The exact documentation required can vary depending on the taxpayer’s facts and the information available from the employer.</p>
+
+        <h2 id="how-to-report-in-itr">How to Report Leave Encashment in the ITR</h2>
+        <ol class="space-y-2">
+          <li>Check Form 16, salary details and the employer’s final settlement statement first.</li>
+          <li>Determine the eligible exempt amount under Section 10(10AA), using the applicable rules and aggregate ceiling.</li>
+          <li>Keep the taxable portion as part of salary income.</li>
+          <li>Report the eligible exemption in the relevant Section 10(10AA) exemption field in the applicable Income Tax Return utility.</li>
+          <li>Ensure the amounts are consistent with Form 16, TDS information and the supporting calculation. Explain and support any valid difference.</li>
+        </ol>
+        <p>The correct ITR form depends on the taxpayer’s complete income profile, so a particular form should not be selected only on the basis of leave encashment.</p>
+        <p class="rounded-xl border border-accent-500/30 bg-accent-50 p-4 text-sm font-semibold text-slate-700">
+          Please verify the latest applicable provisions before filing your Income Tax Return.
+        </p>
+
+        <section aria-labelledby="frequently-asked-questions" class="mt-12">
+          <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+          <div class="not-prose mt-6"><FAQAccordion items={faqs} /></div>
+        </section>
+
+        <section class="mt-12 rounded-2xl bg-navy-900 p-6 text-white shadow-soft sm:p-8" aria-labelledby="income-tax-help">
+          <p class="text-sm font-bold uppercase tracking-wide text-teal-300">Professional Tax Support</p>
+          <h2 id="income-tax-help" class="mt-2 text-2xl font-bold text-white sm:text-3xl">Need Help With Your Income Tax Return?</h2>
+          <p class="mt-4 text-slate-300">Leave encashment, retirement benefits and salary exemptions can affect your taxable income. Incorrect reporting may result in a higher tax liability or an incorrect exemption claim.</p>
+          <p class="font-bold text-white">NiyamDesk can assist with:</p>
+          <ul class="grid gap-x-6 text-slate-300 sm:grid-cols-2">
+            <li>Income Tax Return Filing</li>
+            <li>Salary Income Review</li>
+            <li>Leave Encashment Tax Calculation</li>
+            <li>Tax Compliance Support</li>
+          </ul>
+          <div class="not-prose mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a href="/income-tax-return-filing" class="btn-primary">Income Tax Filing Service</a>
+            <a href="/contact" class="inline-flex items-center justify-center rounded-lg border border-white/30 px-5 py-3 text-sm font-bold text-white transition hover:border-teal-300 hover:bg-white/10">Contact NiyamDesk</a>
+            <a href={encodedWhatsAppUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg border border-teal-400 px-5 py-3 text-sm font-bold text-teal-200 transition hover:bg-white/10">Talk on WhatsApp</a>
+          </div>
+        </section>
+
+        <section class="mt-8 rounded-xl border border-slate-200 bg-slate-50 p-5" aria-labelledby="article-disclaimer">
+          <p id="article-disclaimer" class="m-0 text-sm leading-7 text-slate-600"><strong>Disclaimer:</strong> This article is intended for general informational purposes only and should not be treated as tax, legal or financial advice. Readers should not rely solely on this article for taking any decision. Tax laws, exemption limits, return utilities, reporting requirements and government interpretations may change from time to time. The tax treatment of leave encashment can also vary depending on the employee’s facts, salary structure, employer category, past exemption claims and applicable law. Readers are advised to check the latest legal/tax position and seek professional advice before acting on the basis of this article.</p>
+        </section>
+      </div>
+
+      <aside class="lg:sticky lg:top-28 lg:self-start">
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+          <h2 class="text-lg font-bold text-navy-900">In This Guide</h2>
+          <nav class="mt-4 grid gap-1 text-sm" aria-label="Article contents">
+            {tocItems.map((item) => <a href={item.href} class="rounded-lg px-3 py-2 font-semibold text-slate-700 transition hover:bg-white hover:text-teal-700">{item.label}</a>)}
+          </nav>
+          <div class="mt-5 border-t border-slate-200 pt-5">
+            <a href="/income-tax-return-filing" class="text-sm font-bold text-teal-700 hover:text-teal-800">Income Tax Return Filing →</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>

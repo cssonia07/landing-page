@@ -10,9 +10,11 @@ interface Props {
   title: string;
   description: string;
   schema?: Record<string, unknown> | Record<string, unknown>[];
+  canonical?: string;
+  ogType?: 'website' | 'article';
 }
 
-const { title, description, schema } = Astro.props;
+const { title, description, schema, canonical, ogType } = Astro.props;
 const gaId = 'G-8TMY5E9D18';
 const clarityId = import.meta.env.PUBLIC_CLARITY_ID;
 ---
@@ -23,7 +25,7 @@ const clarityId = import.meta.env.PUBLIC_CLARITY_ID;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0F172A" />
-    <SEO title={title} description={description} schema={schema} />
+    <SEO title={title} description={description} schema={schema} canonical={canonical} ogType={ogType} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://www.clarity.ms" />

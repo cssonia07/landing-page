@@ -8,9 +8,10 @@ interface Props {
   image?: string;
   noindex?: boolean;
   schema?: Record<string, unknown> | Record<string, unknown>[];
+  ogType?: 'website' | 'article';
 }
 
-const { title, description, canonical, image = '/og-image.svg', noindex = false, schema } = Astro.props;
+const { title, description, canonical, image = '/og-image.svg', noindex = false, schema, ogType = 'website' } = Astro.props;
 const canonicalUrl = canonical ? new URL(canonical, site.url).href : new URL(Astro.url.pathname, site.url).href;
 const imageUrl = new URL(image, site.url).href;
 const schemaItems = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
@@ -22,7 +23,7 @@ const schemaItems = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
 <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
 <link rel="canonical" href={canonicalUrl} />
 
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogType} />
 <meta property="og:site_name" content={site.name} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
