@@ -6,7 +6,7 @@ import { encodedWhatsAppUrl, site } from '@data/site';
 
 const title = 'Leave Encashment Tax Rules & Exemption Limit in India | NiyamDesk';
 const description =
-  'Understand leave encashment tax rules in India, Section 10(10AA), ₹25 lakh exemption limit, calculation method and tax treatment for employees.';
+  'Understand leave encashment tax rules in India, Section 19 deduction, ₹25 lakh exemption limit, calculation method and tax treatment for employees.';
 const articleUrl = '/blog/leave-encashment-tax-rules-india';
 const publishedDate = '2026-08-11';
 const updatedDate = '2026-08-11';
@@ -32,35 +32,35 @@ const tocItems = [
 const problems = [
   {
     problem: 'Assuming the entire leave encashment is tax-free',
-    solution: 'First identify when the payment was received and the employer type, then calculate the exemption allowed by law.'
+    solution: 'First identify when the payment was received and the employer type, then calculate the deduction allowed by the law governing that period.'
   },
   {
     problem: 'Treating ₹25 lakh as an automatic exemption',
-    solution: 'Apply all four prescribed limits. The lowest figure—not the ceiling by itself—is the exempt amount.'
+    solution: 'Apply all four prescribed limits. The lowest figure—not the ceiling by itself—is the deductible amount.'
   },
   {
     problem: 'Using total or gross salary',
-    solution: 'Use only the prescribed salary components: basic salary, qualifying dearness allowance and eligible turnover-based commission.'
+    solution: 'Under current Section 19(2)(b), use basic salary and qualifying dearness allowance; exclude other allowances and perquisites.'
   },
   {
     problem: 'Ignoring the 30-days-per-year restriction',
     solution: 'Rework eligible earned leave using no more than 30 days for each completed year of service with the current employer.'
   },
   {
-    problem: 'Forgetting an exemption claimed from a previous employer',
-    solution: 'Check past returns and settlement records because earlier claims can reduce the remaining aggregate ceiling.'
+    problem: 'Forgetting a deduction or exemption claimed from a previous employer',
+    solution: 'Check past returns and settlement records because earlier deductions or legacy exemptions can reduce the remaining aggregate ceiling.'
   },
   {
     problem: 'Confusion because the employer deducted TDS',
-    solution: 'TDS is tax collected in advance, not the final tax decision. Reconcile it with Form 16 and the correct exemption calculation.'
+    solution: 'TDS is tax collected in advance, not the final tax decision. Reconcile it with Form 16 and the correct deduction calculation.'
   },
   {
     problem: 'Not checking Form 16 before filing the ITR',
-    solution: 'Compare the salary, exemption and TDS figures in Form 16 with the final settlement statement before filing.'
+    solution: 'Compare the salary, deduction or exemption, and TDS figures in Form 16 with the final settlement statement before filing.'
   },
   {
     problem: 'Reporting the exemption incorrectly in the ITR',
-    solution: 'Report the eligible exemption in the field for Section 10(10AA) and retain the calculation supporting that amount.'
+    solution: 'Use the field provided in the ITR utility for the applicable year and retain the Section 19 or legacy-law calculation supporting that amount.'
   },
   {
     problem: 'Not keeping settlement or leave-balance documents',
@@ -75,23 +75,23 @@ const documents = [
   'Employer leave encashment calculation',
   'Leave balance statement',
   'Employment or service records',
-  'Details of previous leave encashment exemptions, if any',
+  'Details of previous leave encashment deductions or exemptions, if any',
   'TDS details',
   'Relevant employer certificate or supporting document'
 ];
 
 const faqs = [
   { question: 'Is leave encashment taxable in India?', answer: 'It can be taxable. The treatment depends mainly on whether it is received during employment or at retirement and whether the employer is a qualifying Government employer.' },
-  { question: 'Is leave encashment received during employment taxable?', answer: 'Yes. It is generally taxable as salary. Relief under Section 89 may be relevant in an eligible case, but it is not automatic.' },
-  { question: 'Is leave encashment tax-free for Government employees?', answer: 'For qualifying Central or State Government employees, leave salary received at retirement is fully exempt under Section 10(10AA)(i). The rule should be checked against the employee and payment facts.' },
-  { question: 'What is the leave encashment exemption limit for private employees?', answer: 'The statutory ceiling is ₹25 lakh for eligible retirement leave encashment, but the actual exemption is the lowest amount under the prescribed four-part calculation.' },
-  { question: 'Is the entire ₹25 lakh automatically exempt?', answer: 'No. ₹25 lakh is only one of four limits, and it is also an aggregate ceiling. The calculated exemption may be much lower.' },
-  { question: 'How is leave encashment exemption calculated?', answer: 'For an eligible non-Government employee at retirement, compare the actual receipt, ₹25 lakh ceiling, 10 months’ average salary and cash equivalent of eligible unused leave. The lowest is exempt.' },
-  { question: 'What salary is considered for leave encashment calculation?', answer: 'It generally includes basic salary, dearness allowance forming part of retirement benefits and commission fixed as a percentage of turnover, where applicable.' },
+  { question: 'Is leave encashment received during employment taxable?', answer: 'Yes. It is generally taxable as salary. Relief under Section 157 of the Income-tax Act, 2025 may be relevant in an eligible case, but it is not automatic. Section 89 was the corresponding earlier-law provision.' },
+  { question: 'Is leave encashment tax-free for Government employees?', answer: 'For a qualifying Central or State Government employee, the eligible retirement leave salary is deductible in full under Section 19(1), Table Sl. No. 13 of the Income-tax Act, 2025. The employee and payment facts must still satisfy that entry.' },
+  { question: 'What is the leave encashment exemption limit for private employees?', answer: 'The current prescribed ceiling is ₹25 lakh for eligible retirement leave encashment, but the Section 19 deduction is the lowest amount under the applicable four-part calculation.' },
+  { question: 'Is the entire ₹25 lakh automatically exempt?', answer: 'No. ₹25 lakh is only one of four limits and operates as an aggregate ceiling. The deduction calculated under Section 19 may be much lower.' },
+  { question: 'How is leave encashment exemption calculated?', answer: 'For an eligible non-Government employee at retirement, compare the actual receipt, ₹25 lakh prescribed ceiling, 10 months’ average salary and cash equivalent of eligible unused leave. The lowest is deductible under Section 19.' },
+  { question: 'What salary is considered for leave encashment calculation?', answer: 'Under Section 19(2)(b), salary means basic salary and includes dearness allowance if the terms of employment so provide, but excludes all other allowances and perquisites.' },
   { question: 'Is HRA included in average salary for leave encashment calculation?', answer: 'No. HRA is generally not included in the prescribed average-salary calculation.' },
   { question: 'What happens if I received leave encashment from two employers?', answer: 'Eligible exemptions from more than one employer remain subject to the aggregate statutory ceiling and the calculation applicable to each payment.' },
-  { question: 'What if I already claimed leave encashment exemption in an earlier year?', answer: 'The available statutory ceiling may need to be reduced by the exemption already claimed under Section 10(10AA)(ii).' },
-  { question: 'Where is leave encashment shown in the Income Tax Return?', answer: 'The taxable part remains under salary income. The eligible exempt part should be entered in the relevant Section 10(10AA) exemption field in the applicable ITR utility.' },
+  { question: 'What if I already claimed leave encashment exemption in an earlier year?', answer: 'Under Section 19(2)(f), the available aggregate ceiling must account for eligible amounts deducted in earlier tax years, including relevant legacy claims under the earlier law.' },
+  { question: 'Where is leave encashment shown in the Income Tax Return?', answer: 'The taxable part remains under salary income. For periods governed by the Income-tax Act, 2025, claim the eligible Section 19 deduction in the field provided by the applicable ITR utility; labels can vary by tax year and utility version.' },
   { question: 'Can TDS be deducted on leave encashment?', answer: 'Yes. An employer may deduct TDS after considering the taxable salary and information available to it. The final treatment should still be checked while filing the return.' }
 ];
 
@@ -157,12 +157,16 @@ const schema = [
 
     <div class="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[minmax(0,1fr)_18rem] lg:px-8 lg:py-14">
       <div class="prose-service min-w-0 max-w-4xl">
+        <aside class="mb-8 rounded-xl border-l-4 border-accent-500 bg-accent-50 p-5 sm:p-6" aria-label="Important legal update">
+          <p class="m-0 leading-7 text-slate-700"><strong>Important legal update:</strong> The Income-tax Act, 2025 came into force from 1 April 2026. Under the current Act, the tax treatment and deduction for retirement leave encashment is contained in Section 19(1), Table Sl. Nos. 13 and 14. Section 10(10AA) of the Income-tax Act, 1961 was the corresponding provision under the earlier law and may remain relevant when examining periods governed by the earlier Act.</p>
+        </aside>
+
         <section aria-labelledby="quick-answer" class="mb-10 rounded-xl border border-teal-200 bg-teal-50 p-5 sm:p-6">
           <h2 id="quick-answer" class="mt-0 text-2xl font-bold text-navy-900">Quick Answer</h2>
           <ol class="mb-0 mt-4 space-y-3">
             <li><strong>During employment:</strong> Leave encashment received while a person is still in employment is generally taxable as salary.</li>
-            <li><strong>Government employees at retirement:</strong> Eligible leave encashment is fully exempt under Section 10(10AA), subject to the provision’s conditions.</li>
-            <li><strong>Non-Government employees at retirement:</strong> Eligible leave encashment exemption is available under Section 10(10AA), subject to the prescribed calculation and limits.</li>
+            <li><strong>Government employees at retirement:</strong> The eligible amount is deductible in full under Section 19(1), Table Sl. No. 13, subject to that entry’s conditions.</li>
+            <li><strong>Other employees at retirement:</strong> A deduction is available under Section 19(1), Table Sl. No. 14, subject to the prescribed calculation and limits.</li>
           </ol>
         </section>
 
@@ -179,15 +183,15 @@ const schema = [
           Leave encashment received while continuing in employment is generally taxable as salary. It is not covered by the retirement exemption merely because the payment relates to accumulated earned leave.
         </p>
         <div class="my-6 rounded-xl border border-accent-500/30 bg-accent-50 p-5">
-          <p class="m-0 text-sm leading-7 text-slate-700"><strong>Section 89 relief:</strong> Relief may be relevant in an eligible situation where the conditions are satisfied. It is not automatic and should be examined separately based on the year-wise salary and applicable rules.</p>
+          <p class="m-0 text-sm leading-7 text-slate-700"><strong>Section 157 relief:</strong> Under the Income-tax Act, 2025, relief may be relevant in an eligible situation where the statutory conditions are satisfied. It is not automatic and should be examined separately using the prescribed year-wise calculation and procedure. Section 89 of the Income-tax Act, 1961 was the corresponding provision for periods governed by the earlier law.</p>
         </div>
 
         <h2 id="leave-encashment-at-retirement">Leave Encashment at Retirement</h2>
-        <p>Section 10(10AA) provides different treatment for qualifying Government employees and other employees.</p>
+        <p>Section 19 of the Income-tax Act, 2025 provides different deductions for qualifying Central or State Government employees and other employees.</p>
 
         <h3 id="government-employees">A. Government Employees</h3>
         <p>
-          Under Section 10(10AA)(i), leave salary received at retirement by a qualifying Central or State Government employee is fully exempt. The exemption applies to the cash equivalent of leave salary for the period of earned leave standing to the employee’s credit at retirement, whether retirement is on superannuation or otherwise.
+          Under Section 19(1), Table Sl. No. 13, the eligible leave salary received at retirement by a qualifying Central or State Government employee is deductible in full. The entry covers the cash equivalent of leave salary for the period of earned leave standing to the employee’s credit at retirement, whether retirement is on superannuation or otherwise.
         </p>
         <p>
           The expression “Government employee” for this purpose should not be assumed to cover every employee of a public-sector undertaking, government company, local authority or other government-linked organisation. The employee’s legal status and the facts of the payment should be checked.
@@ -195,39 +199,38 @@ const schema = [
 
         <h3 id="private-employees">B. Non-Government / Private-Sector Employees</h3>
         <p>
-          For an eligible non-Government employee receiving leave encashment on retirement, the leave salary exemption under Section 10(10AA)(ii) is the <strong>lowest</strong> of these four amounts:
+          For an eligible employee other than a Central or State Government employee receiving leave encashment on retirement, the deduction under Section 19(1), Table Sl. No. 14 is the <strong>lowest</strong> of these four amounts:
         </p>
         <ol class="space-y-2">
           <li>Actual leave encashment received</li>
-          <li>₹25,00,000 statutory exemption ceiling</li>
+          <li>₹25,00,000 prescribed ceiling</li>
           <li>10 months’ average salary</li>
           <li>Cash equivalent of eligible unutilised earned leave, based on average salary</li>
         </ol>
         <p>
-          For this calculation, earned leave entitlement is restricted to a maximum of <strong>30 days for each completed year of service with the current employer</strong>. Leave already taken must be reduced when arriving at the eligible unused balance.
+          Section 19 continues to restrict earned-leave entitlement for this calculation to <strong>30 days for every year of actual service rendered to the employer from whose service the employee retired</strong>. Leave already taken must be reduced when arriving at the eligible unused balance.
         </p>
 
         <div class="my-6 rounded-xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
           <h3 class="mt-0">Average Salary</h3>
           <p><strong>Average salary = average of the salary for the 10 months immediately preceding retirement.</strong></p>
-          <p>For this purpose, salary generally includes:</p>
+          <p>Section 19(2)(b) defines salary for this purpose as:</p>
           <ul>
             <li>Basic salary</li>
-            <li>Dearness allowance, to the extent it forms part of retirement benefits</li>
-            <li>Commission based on a fixed percentage of turnover, where applicable</li>
+            <li>Dearness allowance, if the terms of employment so provide</li>
           </ul>
-          <p class="mb-0">HRA, bonus and unrelated allowances are generally not included in this prescribed calculation.</p>
+          <p class="mb-0">All other allowances and perquisites are excluded. Accordingly, HRA, bonus and commission are not included in the current statutory salary definition. Earlier-law calculations should be checked separately under the provisions then applicable.</p>
         </div>
 
         <h2 id="important-25-lakh-limit">Important ₹25 Lakh Exemption Limit</h2>
         <div class="my-6 rounded-xl border-l-4 border-accent-500 bg-accent-50 p-5 sm:p-6">
-          <p class="m-0 text-lg font-bold leading-8 text-navy-900">₹25 lakh is the maximum statutory ceiling—it does not mean every employee automatically gets a ₹25 lakh exemption.</p>
+          <p class="m-0 text-lg font-bold leading-8 text-navy-900">₹25 lakh is the current prescribed ceiling—it does not mean every employee automatically gets a ₹25 lakh deduction or exemption.</p>
         </div>
         <p>
-          The ceiling for eligible non-Government leave encashment has been ₹25 lakh from 1 April 2023 under Notification No. 31/2023. The actual leave encashment tax exemption can be lower because the prescribed “least of” calculation must still be applied.
+          The current prescribed ceiling for eligible employees other than Central or State Government employees is ₹25 lakh. Notification No. 31/2023 raised the ceiling to ₹25 lakh with effect from 1 April 2023 under the earlier Section 10(10AA) framework; it was <strong>not</strong> a notification issued under Section 19 of the Income-tax Act, 2025. Under the current Section 19 framework, the prescribed ceiling must still be combined with the other statutory limits, so the actual deduction can be lower.
         </p>
         <p>
-          The ₹25 lakh amount is also an <strong>aggregate limit</strong>. If exemption under Section 10(10AA)(ii) was claimed in an earlier year, the available ceiling may need to be reduced by the exemption already availed. Payments from more than one employer are also subject to the aggregate statutory limit.
+          Section 19(2)(f) makes the ₹25 lakh amount an <strong>aggregate limit</strong>. When an eligible payment is received from more than one employer in the same tax year, the combined deduction cannot exceed the prescribed ceiling. If a qualifying amount was deducted in an earlier tax year, the current ceiling is reduced by the amount previously deducted. Relevant exemptions claimed under Section 10(10AA)(ii) for periods governed by the Income-tax Act, 1961 must therefore be considered when establishing the remaining lifetime ceiling.
         </p>
 
         <h2 id="practical-calculation-example">Practical Leave Encashment Calculation Example</h2>
@@ -251,14 +254,14 @@ const schema = [
                 <tr><td class="px-5 py-3">Cash equivalent of eligible leave</td><td class="px-5 py-3">8 × ₹80,000</td><td class="px-5 py-3 text-right font-semibold">₹6,40,000</td></tr>
               </tbody>
               <tfoot class="divide-y divide-teal-200 bg-teal-50 text-navy-900">
-                <tr><th class="px-5 py-3" colspan="2">Exempt leave encashment (lowest amount)</th><td class="px-5 py-3 text-right font-bold">₹6,40,000</td></tr>
+                <tr><th class="px-5 py-3" colspan="2">Section 19 deduction (lowest amount)</th><td class="px-5 py-3 text-right font-bold">₹6,40,000</td></tr>
                 <tr><th class="px-5 py-3" colspan="2">Taxable portion (₹9,00,000 − ₹6,40,000)</th><td class="px-5 py-3 text-right font-bold">₹2,60,000</td></tr>
               </tfoot>
             </table>
           </div>
         </div>
         <p class="text-sm">
-          <strong>Illustration only:</strong> An actual calculation depends on facts including completed service, leave entitlement and utilisation, previous exemptions, employer history and salary structure.
+          <strong>Illustration only:</strong> An actual calculation depends on facts including actual service, leave entitlement and utilisation, previous deductions or exemptions, employer history and salary structure.
         </p>
 
         <h2 id="common-problems">Common Leave Encashment Tax Problems Employees Face</h2>
@@ -281,9 +284,9 @@ const schema = [
         <h2 id="how-to-report-in-itr">How to Report Leave Encashment in the ITR</h2>
         <ol class="space-y-2">
           <li>Check Form 16, salary details and the employer’s final settlement statement first.</li>
-          <li>Determine the eligible exempt amount under Section 10(10AA), using the applicable rules and aggregate ceiling.</li>
+          <li>Identify which Act governs the relevant tax year. For a period governed by the Income-tax Act, 2025, determine the eligible deduction under Section 19 using the applicable limits and aggregate ceiling; use Section 10(10AA) only for a period governed by the earlier Act.</li>
           <li>Keep the taxable portion as part of salary income.</li>
-          <li>Report the eligible exemption in the relevant Section 10(10AA) exemption field in the applicable Income Tax Return utility.</li>
+          <li>For current-law periods, claim the eligible Section 19 deduction in the field provided by the applicable Income Tax Return utility. The exact schedule, field label and validation can vary with the relevant tax year and utility version.</li>
           <li>Ensure the amounts are consistent with Form 16, TDS information and the supporting calculation. Explain and support any valid difference.</li>
         </ol>
         <p>The correct ITR form depends on the taxpayer’s complete income profile, so a particular form should not be selected only on the basis of leave encashment.</p>
@@ -293,7 +296,7 @@ const schema = [
 
         <section aria-labelledby="frequently-asked-questions" class="mt-12">
           <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
-          <div class="not-prose mt-6"><FAQAccordion items={faqs} /></div>
+          <div class="not-prose mt-6"><FAQAccordion items={faqs} useChevronIcon /></div>
         </section>
 
         <section class="mt-12 rounded-2xl bg-navy-900 p-6 text-white shadow-soft sm:p-8" aria-labelledby="income-tax-help">
