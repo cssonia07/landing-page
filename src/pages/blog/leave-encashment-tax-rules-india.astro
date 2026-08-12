@@ -40,7 +40,7 @@ const problems = [
   },
   {
     problem: 'Using total or gross salary',
-    solution: 'Under current Section 19(2)(b), use basic salary and qualifying dearness allowance; exclude other allowances and perquisites.'
+    solution: 'Apply the statutory salary definition instead of gross salary. Check dearness allowance against the applicable conditions, exclude allowances and perquisites that the provision excludes, and verify commission from the remuneration facts rather than assuming it is always included or excluded.'
   },
   {
     problem: 'Ignoring the 30-days-per-year restriction',
@@ -82,15 +82,16 @@ const documents = [
 
 const faqs = [
   { question: 'Is leave encashment taxable in India?', answer: 'It can be taxable. The treatment depends mainly on whether it is received during employment or at retirement and whether the employer is a qualifying Government employer.' },
-  { question: 'Is leave encashment received during employment taxable?', answer: 'Yes. It is generally taxable as salary. Relief under Section 157 of the Income-tax Act, 2025 may be relevant in an eligible case, but it is not automatic. Section 89 was the corresponding earlier-law provision.' },
+  { question: 'Is leave encashment received during employment taxable?', answer: 'Yes. It is generally taxable as salary, and the retirement-related Section 19 deduction does not apply merely because the payment relates to accumulated leave. Relief under Section 157 may be relevant only where the receipt independently satisfies the categories, conditions and applicable prescribed rules under that provision; it is not automatic. Section 89 was the corresponding earlier-law relief provision.' },
   { question: 'Is leave encashment tax-free for Government employees?', answer: 'For a qualifying Central or State Government employee, the eligible retirement leave salary is deductible in full under Section 19(1), Table Sl. No. 13 of the Income-tax Act, 2025. The employee and payment facts must still satisfy that entry.' },
   { question: 'What is the leave encashment exemption limit for private employees?', answer: 'The current prescribed ceiling is ₹25 lakh for eligible retirement leave encashment, but the Section 19 deduction is the lowest amount under the applicable four-part calculation.' },
   { question: 'Is the entire ₹25 lakh automatically exempt?', answer: 'No. ₹25 lakh is only one of four limits and operates as an aggregate ceiling. The deduction calculated under Section 19 may be much lower.' },
   { question: 'How is leave encashment exemption calculated?', answer: 'For an eligible non-Government employee at retirement, compare the actual receipt, ₹25 lakh prescribed ceiling, 10 months’ average salary and cash equivalent of eligible unused leave. The lowest is deductible under Section 19.' },
-  { question: 'What salary is considered for leave encashment calculation?', answer: 'Under Section 19(2)(b), salary means basic salary and includes dearness allowance if the terms of employment so provide, but excludes all other allowances and perquisites.' },
-  { question: 'Is HRA included in average salary for leave encashment calculation?', answer: 'No. HRA is generally not included in the prescribed average-salary calculation.' },
-  { question: 'What happens if I received leave encashment from two employers?', answer: 'Eligible exemptions from more than one employer remain subject to the aggregate statutory ceiling and the calculation applicable to each payment.' },
-  { question: 'What if I already claimed leave encashment exemption in an earlier year?', answer: 'Under Section 19(2)(f), the available aggregate ceiling must account for eligible amounts deducted in earlier tax years, including relevant legacy claims under the earlier law.' },
+  { question: 'What salary is considered for leave encashment calculation?', answer: 'Use the salary meaning applicable to Section 19 under the Income-tax Act, 2025. Dearness allowance is counted where the statutory conditions are met, while allowances and perquisites excluded by the provision are left out. Commission requires fact-specific verification against the statutory definition and remuneration structure.' },
+  { question: 'Is HRA included in average salary for leave encashment calculation?', answer: 'HRA should not be included in the prescribed salary merely because it forms part of gross salary; apply the exclusions in the statutory salary definition relevant to Section 19.' },
+  { question: 'How should commission be treated in the leave encashment calculation?', answer: 'Do not assume that every commission payment is included or excluded. Its treatment depends on the applicable statutory salary definition and the employee’s remuneration structure. Official earlier-law guidance historically recognised commission based on a fixed percentage of turnover, but current-law treatment should be verified on the particular facts.' },
+  { question: 'What happens if I received leave encashment from two employers?', answer: 'Eligible deductions in respect of payments from more than one employer remain subject to the applicable aggregate statutory ceiling and calculation.' },
+  { question: 'What if I already claimed leave encashment exemption in an earlier year?', answer: 'Under Section 19(2)(f), the available aggregate ceiling must account for eligible amounts deducted in previous tax years. Relevant legacy exemptions under Section 10(10AA)(ii) should also be considered where the transition provisions apply.' },
   { question: 'Where is leave encashment shown in the Income Tax Return?', answer: 'The taxable part remains under salary income. For periods governed by the Income-tax Act, 2025, claim the eligible Section 19 deduction in the field provided by the applicable ITR utility; labels can vary by tax year and utility version.' },
   { question: 'Can TDS be deducted on leave encashment?', answer: 'Yes. An employer may deduct TDS after considering the taxable salary and information available to it. The final treatment should still be checked while filing the return.' }
 ];
@@ -180,10 +181,10 @@ const schema = [
 
         <h2 id="leave-encashment-during-employment">Leave Encashment During Employment</h2>
         <p>
-          Leave encashment received while continuing in employment is generally taxable as salary. It is not covered by the retirement exemption merely because the payment relates to accumulated earned leave.
+          Leave encashment received while continuing in employment is generally taxable as salary. The retirement-related Section 19 deduction should not be applied merely because the payment relates to accumulated earned leave.
         </p>
         <div class="my-6 rounded-xl border border-accent-500/30 bg-accent-50 p-5">
-          <p class="m-0 text-sm leading-7 text-slate-700"><strong>Section 157 relief:</strong> Under the Income-tax Act, 2025, relief may be relevant in an eligible situation where the statutory conditions are satisfied. It is not automatic and should be examined separately using the prescribed year-wise calculation and procedure. Section 89 of the Income-tax Act, 1961 was the corresponding provision for periods governed by the earlier law.</p>
+          <p class="m-0 text-sm leading-7 text-slate-700"><strong>Section 157 relief:</strong> Relief under Section 157 may be relevant only where the receipt independently falls within the categories and conditions covered by that provision and the applicable prescribed rules. It should not be treated as automatic relief for every leave-encashment payment. Section 89 of the Income-tax Act, 1961 was the corresponding relief provision for periods governed by the earlier law.</p>
         </div>
 
         <h2 id="leave-encashment-at-retirement">Leave Encashment at Retirement</h2>
@@ -194,7 +195,7 @@ const schema = [
           Under Section 19(1), Table Sl. No. 13, the eligible leave salary received at retirement by a qualifying Central or State Government employee is deductible in full. The entry covers the cash equivalent of leave salary for the period of earned leave standing to the employee’s credit at retirement, whether retirement is on superannuation or otherwise.
         </p>
         <p>
-          The expression “Government employee” for this purpose should not be assumed to cover every employee of a public-sector undertaking, government company, local authority or other government-linked organisation. The employee’s legal status and the facts of the payment should be checked.
+          The expression “Government employee” for this purpose should not be assumed to cover every employee of a PSU, government company, local authority, statutory body or another government-linked organisation merely because it is government-controlled. The employee’s legal status, the applicable provision and the facts of the payment should be checked.
         </p>
 
         <h3 id="private-employees">B. Non-Government / Private-Sector Employees</h3>
@@ -208,18 +209,15 @@ const schema = [
           <li>Cash equivalent of eligible unutilised earned leave, based on average salary</li>
         </ol>
         <p>
-          Section 19 continues to restrict earned-leave entitlement for this calculation to <strong>30 days for every year of actual service rendered to the employer from whose service the employee retired</strong>. Leave already taken must be reduced when arriving at the eligible unused balance.
+          Subject to the statutory wording, Section 19 restricts earned-leave entitlement for this calculation to no more than <strong>30 days for every year of actual service rendered to the relevant employer</strong>. Leave already availed must appropriately reduce the eligible unused balance. Service and employer-history facts should be reviewed rather than treating every period in an employment record as completed eligible service.
         </p>
 
         <div class="my-6 rounded-xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
           <h3 class="mt-0">Average Salary</h3>
           <p><strong>Average salary = average of the salary for the 10 months immediately preceding retirement.</strong></p>
-          <p>Section 19(2)(b) defines salary for this purpose as:</p>
-          <ul>
-            <li>Basic salary</li>
-            <li>Dearness allowance, if the terms of employment so provide</li>
-          </ul>
-          <p class="mb-0">All other allowances and perquisites are excluded. Accordingly, HRA, bonus and commission are not included in the current statutory salary definition. Earlier-law calculations should be checked separately under the provisions then applicable.</p>
+          <p>For this calculation, the meaning of salary must be determined under the applicable provisions of the Income-tax Act, 2025, including the statutory salary definition relevant to Section 19. Dearness allowance is taken into account where the applicable statutory conditions are satisfied, while allowances and perquisites excluded by the provision should not be included.</p>
+          <p>Items such as HRA should therefore not be treated as part of the prescribed salary merely because they form part of gross salary. Commission should not be categorically treated as included or excluded without examining the applicable statutory definition and the employee’s remuneration structure.</p>
+          <p class="mb-0">Official leave-encashment guidance under the earlier law historically recognised commission based on a fixed percentage of turnover in the salary calculation. Where commission forms part of remuneration, obtain fact-specific professional verification under the law governing the payment rather than applying a blanket rule.</p>
         </div>
 
         <h2 id="important-25-lakh-limit">Important ₹25 Lakh Exemption Limit</h2>
@@ -228,6 +226,9 @@ const schema = [
         </div>
         <p>
           The current prescribed ceiling for eligible employees other than Central or State Government employees is ₹25 lakh. Notification No. 31/2023 raised the ceiling to ₹25 lakh with effect from 1 April 2023 under the earlier Section 10(10AA) framework; it was <strong>not</strong> a notification issued under Section 19 of the Income-tax Act, 2025. Under the current Section 19 framework, the prescribed ceiling must still be combined with the other statutory limits, so the actual deduction can be lower.
+        </p>
+        <p>
+          Notification No. 31/2023 was originally issued under the Income-tax Act, 1961. Section 536(2)(j) of the Income-tax Act, 2025 is a transition and savings provision: earlier notifications and similar instruments continue to the extent they are not inconsistent with corresponding provisions of the new Act and are treated as issued under the corresponding provision. The current prescribed ceiling should therefore be read with Section 19 and the applicable transition provisions; this does not mean that every earlier instrument continues regardless of inconsistency.
         </p>
         <p>
           Section 19(2)(f) makes the ₹25 lakh amount an <strong>aggregate limit</strong>. When an eligible payment is received from more than one employer in the same tax year, the combined deduction cannot exceed the prescribed ceiling. If a qualifying amount was deducted in an earlier tax year, the current ceiling is reduced by the amount previously deducted. Relevant exemptions claimed under Section 10(10AA)(ii) for periods governed by the Income-tax Act, 1961 must therefore be considered when establishing the remaining lifetime ceiling.
@@ -245,7 +246,7 @@ const schema = [
           <div class="overflow-x-auto">
             <table class="w-full min-w-[34rem] divide-y divide-slate-200 text-left text-sm">
               <thead class="bg-white text-navy-900">
-                <tr><th class="px-5 py-3 font-bold">Prescribed limit</th><th class="px-5 py-3 font-bold">Calculation</th><th class="px-5 py-3 text-right font-bold">Amount</th></tr>
+                <tr><th scope="col" class="px-5 py-3 font-bold">Prescribed Limit</th><th scope="col" class="px-5 py-3 font-bold">Calculation</th><th scope="col" class="px-5 py-3 text-right font-bold">Amount</th></tr>
               </thead>
               <tbody class="divide-y divide-slate-200 text-slate-700">
                 <tr><td class="px-5 py-3">Actual amount received</td><td class="px-5 py-3">Actual payment</td><td class="px-5 py-3 text-right font-semibold">₹9,00,000</td></tr>
@@ -261,7 +262,7 @@ const schema = [
           </div>
         </div>
         <p class="text-sm">
-          <strong>Illustration only:</strong> An actual calculation depends on facts including actual service, leave entitlement and utilisation, previous deductions or exemptions, employer history and salary structure.
+          <strong>Illustration only:</strong> An actual calculation can differ because of salary composition, actual service, leave entitlement, leave already used, past deductions or legacy exemptions, previous employers, employer category and the applicable law.
         </p>
 
         <h2 id="common-problems">Common Leave Encashment Tax Problems Employees Face</h2>
